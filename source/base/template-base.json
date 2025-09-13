@@ -1,7 +1,7 @@
 {
   "figma": {
     "switch": {
-      "template": {
+      "screen": {
         "mode-1": {
           "$type": "boolean",
           "$value": "false"
@@ -18,15 +18,15 @@
     }
   },
   "visibility": {
-    "template": {
+    "screen": {
       "separator": {
         "$type": "boolean",
-        "$value": "{figma.switch.template.mode-1}"
+        "$value": "{figma.switch.screen.mode-1}"
       }
     }
   },
   "space": {
-    "template": {
+    "screen": {
       "section-padding-y": {
         "$type": "spacing",
         "$value": "{space.base.96}"
@@ -62,7 +62,7 @@
     }
   },
   "size": {
-    "template": {
+    "screen": {
       "icon-frame": {
         "$type": "sizing",
         "$value": "{size.base.56}"
