@@ -1,0 +1,13 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@chassis-ui/tokens':
+        specifier: link:/Volumes/Ozgur/Dropbox/Sites/chassis-tokens/packages/tokens
+        version: link:../chassis-tokens/packages/tokens

@@ -1,0 +1,69 @@
+{
+  "name": "@chassis-ui/website-tokens",
+  "version": "0.1.0",
+  "description": "The design tokens of the Chassis websites and apps: the chassis and sinefil brands, the docs and demo apps, built with @chassis-ui/tokens",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chassis-ui/website-tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chassis-ui/website-tokens/issues"
+  },
+  "homepage": "https://chassis-ui.com/tokens/",
+  "author": "Ozgur Gunes <o.gunes@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "chassis": {
+    "title": "Chassis - Tokens",
+    "copyright": "Copyright 2026 Ozgur Gunes",
+    "build": {
+      "brands": [
+        "chassis",
+        "sinefil"
+      ],
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "screens": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "apps": {
+        "docs": [
+          "web"
+        ],
+        "demo": [
+          "ios",
+          "android"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "build": "chassis-tokens build",
+    "lint": "chassis-tokens lint-source",
+    "verify": "chassis-tokens verify",
+    "diff": "chassis-tokens diff",
+    "swift-package": "chassis-tokens swift-package",
+    "swift-package:check": "chassis-tokens swift-package --check"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@chassis-ui/tokens": "link:/Volumes/Ozgur/Dropbox/Sites/chassis-tokens/packages/tokens"
+  }
+}

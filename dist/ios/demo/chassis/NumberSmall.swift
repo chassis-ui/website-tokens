@@ -4,10 +4,10 @@
 //
 
 // Do not edit directly, this file was auto-generated.
-// Generated on Fri, 30 Oct 2026 15:03:49 GMT
-// Chassis - Tokens v0.11.0
+// Generated on Fri, 30 Oct 2026 19:47:29 GMT
+// Chassis - Tokens v0.1.0
 // Copyright 2026 Ozgur Gunes
-// Licensed under MIT (https://github.com/chassis-ui/tokens/blob/main/LICENSE)
+// Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
 
 
 import UIKit
