@@ -6,12 +6,6 @@ The design tokens of the Chassis websites and apps: the `chassis` and `sinefil` 
 [`@chassis-ui/tokens`](https://www.npmjs.com/package/@chassis-ui/tokens) into SCSS, Swift and
 Android resources.
 
-> **The dependency on the builder is local for now.** `@chassis-ui/tokens` 0.12.0, the first
-> version with the `chassis-tokens` command, is not on npm yet, so `package.json` links the
-> `packages/tokens` folder of a chassis-tokens checkout, on the branch `feat/tokens-command`.
-> The dependency moves to `^0.12.0` before 0.1.0 is tagged. Until then the workflows cannot
-> install it, and this note goes with the link.
-
 ## Layout
 
 ```
