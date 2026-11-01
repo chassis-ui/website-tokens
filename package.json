@@ -58,7 +58,8 @@
     "verify": "chassis-tokens verify",
     "diff": "chassis-tokens diff",
     "swift-package": "chassis-tokens swift-package",
-    "swift-package:check": "chassis-tokens swift-package --check"
+    "swift-package:check": "chassis-tokens swift-package --check",
+    "archive": "chassis-tokens archive"
   },
   "engines": {
     "node": ">=22.12.0"

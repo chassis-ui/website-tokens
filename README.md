@@ -37,6 +37,7 @@ pnpm install
 | `pnpm diff`                | Reports the tokens added, removed and changed against the `main` branch |
 | `pnpm swift-package`       | Writes `Package.swift` from `chassis.build`                             |
 | `pnpm swift-package:check` | Checks that `Package.swift` follows `chassis.build`                     |
+| `pnpm archive`             | Writes one zip per platform, app and brand of `dist/` to `archives/`    |
 
 `node_modules/.bin/chassis-tokens build --help` prints the options of the build: a part of the
 output with `--brand`, `--app`, `--platform`, `--theme` and `--screen`, and a plan with
@@ -64,24 +65,31 @@ the library `ChassisTokensDemoChassis` or `ChassisTokensDemoSinefil`. The versio
 Android: download `chassis-tokens-demo-<brand>-<version>.aar` from the
 [GitHub release](https://github.com/chassis-ui/website-tokens/releases).
 
+A project that takes the files of one brand: download
+`website-tokens-<platform>-<app>-<brand>-<version>.zip` from the same release.
+
 The [documentation of Chassis Tokens](https://chassis-ui.com/tokens/) describes the tokens, the
 output of each platform and how a project uses it.
 
 ## Releases
 
-A release is a tag, `v<version>`, with the version of `package.json`:
+A release is a push to `main` with a new version in `package.json`, without a tag of its own, as
+the workflow makes the tag:
 
 1. Set the version in `package.json`, and add its entry to `CHANGELOG.md`.
 2. `pnpm build`, which writes the version into the headers of `dist/`. `pnpm verify` ignores
    those lines, so it does not notice a build that was skipped.
 3. `pnpm verify`.
-4. Commit all of it, then `git tag v<version> && git push origin main v<version>`.
+4. Commit all of it, then `git push origin main`.
 
-The release workflow checks the tag against the version, lints `source/`, checks `dist/` against
-a fresh build and `Package.swift` against `chassis.build`, builds the Android libraries with the
-Gradle project that comes with `@chassis-ui/tokens`, publishes the package to npm with trusted
-publishing, and creates the GitHub release with one Android library per app and brand attached.
-A tag with a prerelease part, such as `v0.2.0-next.0`, goes to the dist-tag `next`.
+The release workflow runs when the version has no tag `v<version>`. It lints `source/`, checks
+`dist/` against a fresh build and `Package.swift` against `chassis.build`, builds the Android
+libraries with the Gradle project that comes with `@chassis-ui/tokens`, writes the archives,
+publishes the package to npm with trusted publishing, and creates the tag and its GitHub release
+with one Android library per app and brand, and one zip per platform, app and brand, attached.
+A push whose version has a tag releases nothing, and a release that fails makes no tag, so the
+next push tries again. A version with a prerelease part, such as `0.2.0-next.0`, goes to the
+dist-tag `next`.
 
 The trusted publisher of the package on npmjs.com is this repository and `release.yml`.
 Renaming the workflow file breaks publishing until it is updated there.
