@@ -7,6 +7,21 @@ sets the version.
 The history of the token values before 0.1.0 is in the
 [changelog of Chassis Tokens](https://github.com/chassis-ui/tokens/blob/main/packages/tokens/CHANGELOG.md).
 
+## [0.2.0]
+
+### Added
+
+- One zip per platform, app and brand, attached to each release:
+  `website-tokens-<platform>-<app>-<brand>-<version>.zip`, with the content of
+  `dist/<platform>/<app>/<brand>/` at its top level. `pnpm archive` writes them to `archives/`.
+
+### Changed
+
+- A release runs on a push to `main` with a new version in `package.json`, in place of a tag
+  pushed by hand. The workflow creates the tag `v<version>`, and a push whose version has a tag
+  releases nothing.
+- Built with `@chassis-ui/tokens` 0.14.0.
+
 ## [0.1.0]
 
 ### Added
