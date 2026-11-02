@@ -62,7 +62,7 @@ Web, with Sass modules, from `npm install @chassis-ui/website-tokens`:
 iOS: add `https://github.com/chassis-ui/website-tokens.git` with Swift Package Manager, then
 the library `ChassisTokensDemoChassis` or `ChassisTokensDemoSinefil`. The version is the tag.
 
-Android: download `chassis-tokens-demo-<brand>-<version>.aar` from the
+Android: download `website-tokens-android-demo-<brand>-<version>.aar` from the
 [GitHub release](https://github.com/chassis-ui/website-tokens/releases).
 
 A project that takes the files of one brand: download
@@ -82,11 +82,11 @@ the workflow makes the tag:
 3. `pnpm verify`.
 4. Commit all of it, then `git push origin main`.
 
-The release workflow runs when the version has no tag `v<version>`. It lints `source/`, checks
+The release workflow runs when the version has no tag `v<version>`, and stops when `CHANGELOG.md` has no entry for it. It lints `source/`, checks
 `dist/` against a fresh build and `Package.swift` against `chassis.build`, builds the Android
 libraries with the Gradle project that comes with `@chassis-ui/tokens`, writes the archives,
-publishes the package to npm with trusted publishing, and creates the tag and its GitHub release
-with one Android library per app and brand, and one zip per platform, app and brand, attached.
+publishes the package to npm with trusted publishing, and creates the tag and its GitHub release,
+whose body is the entry of the version, with one Android library per app and brand, and one zip per platform, app and brand, attached.
 A push whose version has a tag releases nothing, and a release that fails makes no tag, so the
 next push tries again. A version with a prerelease part, such as `0.2.0-next.0`, goes to the
 dist-tag `next`.

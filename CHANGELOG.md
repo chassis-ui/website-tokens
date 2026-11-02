@@ -2,10 +2,26 @@
 
 The notable changes of each release of `@chassis-ui/website-tokens`, in the form of
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Written by hand, in the commit that
-sets the version.
+sets the version. The body of the GitHub release is the entry of its version, and a version
+without an entry is not released.
 
 The history of the token values before 0.1.0 is in the
 [changelog of Chassis Tokens](https://github.com/chassis-ui/tokens/blob/main/packages/tokens/CHANGELOG.md).
+
+## [0.3.0]
+
+### Changed
+
+- **Breaking.** The Android libraries are named after the repository, as the zips:
+  `chassis-tokens-demo-<brand>-<version>.aar` becomes
+  `website-tokens-android-demo-<brand>-<version>.aar`. The zips, the Swift package and the package
+  on npm keep their names, and no token changes.
+- A release takes its text from this changelog, and stops without an entry.
+- Built with `@chassis-ui/tokens` 0.15.0.
+
+### Added
+
+- `AGENTS.md`, with the rules for AI coding agents in this repository.
 
 ## [0.2.0]
 
