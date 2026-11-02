@@ -1,0 +1,1288 @@
+<meta charset="utf-8" />
+<title>Chassis Color Scale Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover" />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&display=swap"
+/>
+<style>
+  /* Layout: one column; every control row shares the swatch grid, so a step's inputs sit above its swatch column. */
+  :root {
+    --ground: #f3f3f3;
+    --panel: #ffffff;
+    --ink: #161616;
+    --muted: #626262;
+    --line: #d8d8d8;
+    --slot-a: #0b63ce;
+    --slot-b: #b4340f;
+    --slot-c: #0a7a4b;
+    --slot-d: #7a2fc0;
+    --ref: #6b6b6b;
+    --warn: #a14400;
+    --ui: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --data: 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      --ground: #181818;
+      --panel: #222222;
+      --ink: #eeeeee;
+      --muted: #a2a2a2;
+      --line: #3a3a3a;
+      --slot-a: #6aaefc;
+      --slot-b: #f58a63;
+      --slot-c: #52cf95;
+      --slot-d: #bd8cf5;
+      --ref: #9a9a9a;
+      --warn: #f0a868;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme='dark'] {
+    --ground: #181818;
+    --panel: #222222;
+    --ink: #eeeeee;
+    --muted: #a2a2a2;
+    --line: #3a3a3a;
+    --slot-a: #6aaefc;
+    --slot-b: #f58a63;
+    --slot-c: #52cf95;
+    --slot-d: #bd8cf5;
+    --ref: #9a9a9a;
+    --warn: #f0a868;
+    color-scheme: dark;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font: 14px/1.45 var(--ui);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 20px 56px;
+  }
+  .wrap {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    max-width: 70ch;
+  }
+  .muted {
+    color: var(--muted);
+  }
+  .mono {
+    font-family: var(--data);
+    font-variant-numeric: tabular-nums;
+  }
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    align-items: flex-end;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--muted);
+    min-width: 0;
+  }
+  .checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    color: var(--ink);
+    font-size: 13px;
+  }
+  .checks label {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  input,
+  select,
+  button {
+    font: inherit;
+    color: var(--ink);
+  }
+  input[type='text'],
+  input[type='number'],
+  select {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 6px;
+    min-width: 0;
+  }
+  input[type='number'] {
+    font-family: var(--data);
+    font-size: 12px;
+    width: 100%;
+    padding: 3px 2px 3px 5px;
+  }
+  button {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  button:hover {
+    border-color: var(--muted);
+  }
+  :focus-visible {
+    outline: 2px solid var(--slot-a);
+    outline-offset: 1px;
+  }
+  .status {
+    font-size: 12px;
+    color: var(--muted);
+    min-height: 18px;
+  }
+  .error {
+    color: var(--warn);
+    font-size: 12px;
+  }
+  .slots {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .slot {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 3px solid var(--tone);
+  }
+  .slot-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: flex-end;
+  }
+  .slot-tag {
+    font-family: var(--data);
+    font-weight: 500;
+    color: var(--tone);
+    font-size: 15px;
+    align-self: center;
+  }
+  .narrow {
+    width: 76px;
+  }
+  .formula {
+    font-family: var(--data);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .scroll {
+    overflow-x: auto;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 112px repeat(11, minmax(62px, 1fr));
+    gap: 3px;
+    min-width: 820px;
+    align-items: center;
+  }
+  .grid .lab {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.25;
+    padding-right: 6px;
+  }
+  .grid .lab b {
+    color: var(--ink);
+    font-weight: 500;
+    display: block;
+  }
+  .stepnum {
+    font-family: var(--data);
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 5px;
+  }
+  .fixed {
+    font-family: var(--data);
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 5px;
+  }
+  .sw {
+    height: 62px;
+    padding: 5px 6px;
+    font-family: var(--data);
+    font-size: 11px;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  .compact .sw {
+    height: 34px;
+  }
+  .compact .sw span {
+    display: none;
+  }
+  .sw.base {
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+  .warn {
+    color: var(--warn);
+  }
+  input.capped {
+    border-color: var(--warn);
+    color: var(--warn);
+  }
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .brand > h2 {
+    text-transform: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+  }
+  .role {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .role-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    align-items: baseline;
+  }
+  .linkish {
+    padding: 1px 7px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .linkish[aria-pressed='true'] {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .curves {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .plots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .plot {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .plot svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .plot text {
+    fill: var(--muted);
+    font: 10px var(--data);
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    font-size: 12px;
+  }
+  .legend span {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    button {
+      transition: border-color 0.12s;
+    }
+  }
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <h1>Chassis Color Scale Lab</h1>
+    <p class="muted">
+      Compare formulas for steps 05 to 95 on the base colors of each brand. Step 50 is always the
+      base. Change any value and every swatch updates.
+    </p>
+  </header>
+
+  <section class="bar" aria-label="What to show">
+    <div class="field">
+      <span>Brands</span>
+      <div class="checks" id="brand-filter"></div>
+    </div>
+    <div class="field">
+      <span>Roles</span>
+      <div class="checks" id="role-filter"></div>
+    </div>
+    <div class="field">
+      <span>Try another color</span>
+      <div style="display: flex; gap: 6px; align-items: center">
+        <input
+          type="color"
+          id="custom-picker"
+          value="#0094b8"
+          aria-label="Pick a color"
+          style="
+            width: 32px;
+            height: 30px;
+            padding: 0;
+            border: 1px solid var(--line);
+            background: none;
+          "
+        />
+        <input
+          type="text"
+          id="custom-hex"
+          placeholder="#0094B8"
+          style="width: 92px"
+          class="mono"
+          aria-label="Hex color"
+        />
+      </div>
+      <span class="error" id="custom-error" hidden></span>
+    </div>
+    <div class="field">
+      <span>Swatches</span>
+      <div class="checks">
+        <label><input type="checkbox" id="show-values" checked /> Show hex, L and C</label>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 10px" aria-label="Formulas">
+    <div class="bar" style="justify-content: space-between; align-items: center">
+      <h2>Formulas</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+        <span class="status" id="save-status"></span>
+        <button id="add-slot">Add a formula</button>
+        <button id="copy-all">Copy settings</button>
+        <button id="save" hidden>Save for Claude</button>
+      </div>
+    </div>
+    <div class="slots" id="slots"></div>
+  </section>
+
+  <section class="curves" aria-label="Curves">
+    <h2 id="curve-title">Curves</h2>
+    <div class="legend" id="legend"></div>
+    <div class="plots" id="plots"></div>
+  </section>
+
+  <div id="results" class="brand" style="gap: 28px"></div>
+</div>
+
+<script>
+  const STEPS = ['05', '10', '20', '30', '40', '50', '60', '70', '80', '90', '95']
+  const TINTS = ['05', '10', '20', '30', '40']
+  const EDITABLE = STEPS.filter((s) => s !== '50')
+  const ROLES = ['primary', 'secondary', 'neutral', 'danger', 'success', 'warning', 'info']
+
+  const BRANDS = {
+    default: {
+      primary: '#1273E0',
+      secondary: '#D115C5',
+      neutral: '#757575',
+      danger: '#E02D12',
+      success: '#0B8A0B',
+      warning: '#996E09',
+      info: '#098294'
+    },
+    chassis: {
+      primary: '#0094B8',
+      secondary: '#F55200',
+      neutral: '#7B878E',
+      danger: '#D72A1D',
+      success: '#1A9E4F',
+      warning: '#F0A205',
+      info: '#3A72E4'
+    },
+    sinefil: {
+      primary: '#7A2E6F',
+      secondary: '#241E1C',
+      neutral: '#7E756E',
+      danger: '#B3261E',
+      success: '#22703F',
+      warning: '#8A5600',
+      info: '#2E5C9E'
+    },
+    'demo-a': {
+      primary: '#FF5B14',
+      secondary: '#808080',
+      neutral: '#717784',
+      danger: '#E8083E',
+      success: '#2DA94E',
+      warning: '#FFB914',
+      info: '#1F76F1'
+    },
+    'demo-b': {
+      primary: '#3527DD',
+      secondary: '#808080',
+      neutral: '#86898B',
+      danger: '#FF5247',
+      success: '#23C16B',
+      warning: '#FFB323',
+      info: '#48A7F8'
+    }
+  }
+  const toSteps = (list) => Object.fromEntries(STEPS.map((s, i) => [s, list[i]]))
+  const HAND_SET = {
+    'demo-a/neutral': toSteps([
+      '#F5F7FA',
+      '#F1F4F8',
+      '#E1E4EA',
+      '#CACFD7',
+      '#99A0AE',
+      '#717784',
+      '#525867',
+      '#2B303B',
+      '#222530',
+      '#181B25',
+      '#0F131C'
+    ]),
+    'demo-b/primary': toSteps([
+      '#F0F1FF',
+      '#DCDEFA',
+      '#BABEF5',
+      '#8990F5',
+      '#545EEB',
+      '#3527DD',
+      '#261AAD',
+      '#1D1485',
+      '#120C52',
+      '#0D093D',
+      '#07051F'
+    ]),
+    'demo-b/neutral': toSteps([
+      '#F7F9FA',
+      '#F2F4F5',
+      '#E3E5E5',
+      '#CFD0D1',
+      '#9FA2A3',
+      '#86898B',
+      '#5E6366',
+      '#424547',
+      '#2F3133',
+      '#202223',
+      '#131415'
+    ]),
+    'demo-b/danger': toSteps([
+      '#FFF2F2',
+      '#FFE5E5',
+      '#FFC2C2',
+      '#FF9999',
+      '#FF7070',
+      '#FF5247',
+      '#D61E11',
+      '#B81307',
+      '#7A0C05',
+      '#3D0905',
+      '#290A08'
+    ]),
+    'demo-b/success': toSteps([
+      '#F3FBF0',
+      '#E9FAE2',
+      '#CCF5C4',
+      '#7DE08B',
+      '#4BD178',
+      '#23C16B',
+      '#188559',
+      '#116046',
+      '#0C4431',
+      '#093023',
+      '#051D15'
+    ]),
+    'demo-b/warning': toSteps([
+      '#FFF8EB',
+      '#FFEFD6',
+      '#FFE2B8',
+      '#FFD187',
+      '#FFC261',
+      '#FFB323',
+      '#B8740F',
+      '#9E6003',
+      '#5C3B0B',
+      '#3D290A',
+      '#291B07'
+    ]),
+    'demo-b/info': toSteps([
+      '#EAF8FE',
+      '#CBEFFE',
+      '#AADFFA',
+      '#97DAFB',
+      '#6EC2FA',
+      '#48A7F8',
+      '#0866D1',
+      '#054185',
+      '#0B315C',
+      '#0C243E',
+      '#0B1929'
+    ])
+  }
+
+  /* Color math */
+  const s2l = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)
+  const l2s = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055)
+  const hexToRgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255)
+  const rgbToHex = (rgb) =>
+    '#' +
+    rgb
+      .map((c) =>
+        Math.round(Math.min(1, Math.max(0, c)) * 255)
+          .toString(16)
+          .padStart(2, '0')
+      )
+      .join('')
+  function rgbToLab(rgb) {
+    const [r, g, b] = rgb.map(s2l)
+    const cr = (x) => Math.cbrt(x)
+    const l = cr(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b)
+    const m = cr(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b)
+    const s = cr(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b)
+    return [
+      0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s,
+      1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s,
+      0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s
+    ]
+  }
+  function labToLinear(L, a, b) {
+    const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    const m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    const s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3
+    return [
+      4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+      -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+      -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s
+    ]
+  }
+  function hexToLch(hex) {
+    const [L, a, b] = rgbToLab(hexToRgb(hex))
+    return { L, C: Math.hypot(a, b), H: ((Math.atan2(b, a) * 180) / Math.PI + 360) % 360 }
+  }
+  const lchLinear = (L, C, H) =>
+    labToLinear(L, C * Math.cos((H * Math.PI) / 180), C * Math.sin((H * Math.PI) / 180))
+  const inGamut = (L, C, H) => lchLinear(L, C, H).every((c) => c >= -1e-4 && c <= 1 + 1e-4)
+  function maxChroma(L, H) {
+    let lo = 0,
+      hi = 0.5
+    for (let i = 0; i < 24; i++) {
+      const mid = (lo + hi) / 2
+      if (inGamut(L, mid, H)) lo = mid
+      else hi = mid
+    }
+    return lo
+  }
+  const linearToHex = (lin) => rgbToHex(lin.map((c) => l2s(Math.max(0, c))))
+
+  /* Formulas: step 50 is the base in all of them */
+  const FORMULAS = {
+    srgb: { name: 'sRGB mix', params: ['amount'] },
+    oklab: { name: 'OKLab mix', params: ['amount'] },
+    'oklch-amount': { name: 'OKLCH, lightness by amount', params: ['amount', 'chroma', 'hue'] },
+    'oklch-fixed': { name: 'OKLCH, fixed lightness', params: ['lightness', 'chroma', 'hue'] }
+  }
+  const PARAM = {
+    amount: { label: 'Amount', hint: '0 to 1', step: 0.01, min: 0, max: 1 },
+    lightness: { label: 'Lightness', hint: 'L, 0 to 1', step: 0.005, min: 0, max: 1 },
+    chroma: { label: 'Chroma', hint: 'multiplier', step: 0.01, min: 0, max: 3 },
+    hue: { label: 'Hue shift', hint: 'degrees', step: 1, min: -60, max: 60 }
+  }
+  function oklchTarget(slot, base, step) {
+    const { L: L0, C: C0, H: H0 } = hexToLch(base)
+    if (step === '50') return { L: L0, H: H0, wanted: C0, limit: maxChroma(L0, H0) }
+    const p = slot.steps[step]
+    const L =
+      slot.formula === 'oklch-fixed'
+        ? p.lightness
+        : L0 + ((TINTS.includes(step) ? slot.top : slot.bottom) - L0) * p.amount
+    const H = H0 + (p.hue || 0)
+    const limit = maxChroma(L, H)
+    const share = C0 / Math.max(maxChroma(L0, H0), 1e-6)
+    const wanted =
+      slot.chromaMode === 'share' ? Math.min(share * limit, C0) * p.chroma : C0 * p.chroma
+    return { L, H, wanted, limit }
+  }
+  function scaleFor(slot, base) {
+    const out = {}
+    const rgb = hexToRgb(base)
+    const lab = rgbToLab(rgb)
+    for (const step of STEPS) {
+      if (step === '50') {
+        out[step] = base.toLowerCase()
+        continue
+      }
+      const p = slot.steps[step]
+      const tint = TINTS.includes(step)
+      if (slot.formula === 'srgb') {
+        out[step] = rgbToHex(rgb.map((c) => (tint ? c + p.amount * (1 - c) : c * (1 - p.amount))))
+      } else if (slot.formula === 'oklab') {
+        const end = tint ? 1 : 0
+        const mix = [
+          lab[0] + (end - lab[0]) * p.amount,
+          lab[1] * (1 - p.amount),
+          lab[2] * (1 - p.amount)
+        ]
+        out[step] = linearToHex(labToLinear(...mix).map((c) => Math.min(1, Math.max(0, c))))
+      } else {
+        const t = oklchTarget(slot, base, step)
+        out[step] = linearToHex(lchLinear(t.L, Math.min(t.wanted, t.limit), t.H))
+      }
+    }
+    return out
+  }
+  function formulaText(slot) {
+    const chroma =
+      slot.chromaMode === 'share'
+        ? 'C = min(share of base × sRGB max at L and H, base C) × chroma'
+        : 'C = min(base C × chroma, sRGB max at L and H)'
+    switch (slot.formula) {
+      case 'srgb':
+        return 'tint: channel + amount × (1 − channel). shade: channel × (1 − amount). In gamma sRGB, as Tokens Studio does today.'
+      case 'oklab':
+        return 'L, a and b each move in a straight line to white (tints) or black (shades) by amount. Like CSS color-mix(in oklab, …).'
+      case 'oklch-amount':
+        return `L = base L + (end − base L) × amount, where end is ${slot.top} for tints and ${slot.bottom} for shades.  ${chroma}.  H = base H + hue shift.`
+      case 'oklch-fixed':
+        return `L = lightness, the same for every color.  ${chroma}.  H = base H + hue shift.`
+    }
+  }
+
+  /* Presets */
+  const LIGHT = { '05': 0.93, 10: 0.85, 20: 0.7, 30: 0.5, 40: 0.25 }
+  const DARK = { 60: 0.25, 70: 0.5, 80: 0.7, 90: 0.8, 95: 0.85 }
+  const mapSteps = (fn) => Object.fromEntries(EDITABLE.map((s) => [s, fn(s)]))
+  const PRESETS = {
+    current: {
+      label: 'Current sRGB mix',
+      make: () => ({
+        formula: 'srgb',
+        top: 0.975,
+        bottom: 0.19,
+        chromaMode: 'base',
+        steps: mapSteps((s) => ({ amount: LIGHT[s] ?? DARK[s], lightness: 0.5, chroma: 1, hue: 0 }))
+      })
+    },
+    oklab: {
+      label: 'OKLab mix, current amounts',
+      make: () => ({
+        formula: 'oklab',
+        top: 0.975,
+        bottom: 0.19,
+        chromaMode: 'base',
+        steps: mapSteps((s) => ({ amount: LIGHT[s] ?? DARK[s], lightness: 0.5, chroma: 1, hue: 0 }))
+      })
+    },
+    taper: {
+      label: 'OKLCH taper, from the September lab',
+      make: () => {
+        const a = { ...LIGHT, 60: 0.3, 70: 0.5, 80: 0.65, 90: 0.75, 95: 0.85 }
+        return {
+          formula: 'oklch-amount',
+          top: 0.975,
+          bottom: 0.22,
+          chromaMode: 'base',
+          steps: mapSteps((s) => ({
+            amount: a[s],
+            lightness: 0.5,
+            chroma: +(1 - 0.85 * a[s] * a[s]).toFixed(2),
+            hue: 0
+          }))
+        }
+      }
+    },
+    share: {
+      label: 'OKLCH gamut share',
+      make: () => {
+        const a = {
+          '05': 1,
+          10: 0.86,
+          20: 0.66,
+          30: 0.44,
+          40: 0.2,
+          60: 0.22,
+          70: 0.45,
+          80: 0.66,
+          90: 0.84,
+          95: 1
+        }
+        return {
+          formula: 'oklch-amount',
+          top: 0.975,
+          bottom: 0.19,
+          chromaMode: 'share',
+          steps: mapSteps((s) => ({ amount: a[s], lightness: 0.5, chroma: 1, hue: 0 }))
+        }
+      }
+    },
+    fixed: {
+      label: 'OKLCH fixed lightness',
+      make: () => {
+        const l = {
+          '05': 0.975,
+          10: 0.94,
+          20: 0.88,
+          30: 0.8,
+          40: 0.71,
+          60: 0.5,
+          70: 0.41,
+          80: 0.32,
+          90: 0.25,
+          95: 0.19
+        }
+        return {
+          formula: 'oklch-fixed',
+          top: 0.975,
+          bottom: 0.19,
+          chromaMode: 'base',
+          steps: mapSteps((s) => ({ amount: 0.5, lightness: l[s], chroma: 1, hue: 0 }))
+        }
+      }
+    }
+  }
+
+  /* State */
+  const TONES = ['--slot-a', '--slot-b', '--slot-c', '--slot-d']
+  const LETTERS = ['A', 'B', 'C', 'D']
+  const DASHES = ['', '6 3', '2 3', '9 3 2 3']
+  const newSlot = (preset) => ({ name: PRESETS[preset].label, preset, ...PRESETS[preset].make() })
+  const state = {
+    slots: [newSlot('taper'), newSlot('share')],
+    brands: new Set(['chassis', 'sinefil']),
+    roles: new Set(ROLES),
+    custom: null,
+    focus: 'chassis/primary'
+  }
+  const NOW = PRESETS.current.make()
+  const $ = (id) => document.getElementById(id)
+  const storageKey = 'chassis-scale-lab-slots'
+  function validSlots(v) {
+    return (
+      Array.isArray(v) &&
+      v.length > 0 &&
+      v.length <= 4 &&
+      v.every((s) => s && FORMULAS[s.formula] && s.steps && EDITABLE.every((k) => s.steps[k]))
+    )
+  }
+  function remember() {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(state.slots))
+    } catch (e) {}
+  }
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || 'null')
+    if (validSlots(saved)) state.slots = saved
+  } catch (e) {}
+
+  /* Formula panels */
+  function renderSlots() {
+    $('slots').innerHTML = ''
+    state.slots.forEach((slot, i) => $('slots').appendChild(slotPanel(slot, i)))
+    $('add-slot').disabled = state.slots.length >= 4
+  }
+  function slotPanel(slot, i) {
+    const el = document.createElement('div')
+    el.className = 'slot'
+    el.style.setProperty('--tone', `var(${TONES[i]})`)
+    const isOklch = slot.formula.startsWith('oklch')
+    const options = (obj, get, cur) =>
+      Object.keys(obj)
+        .map((k) => `<option value="${k}"${k === cur ? ' selected' : ''}>${get(obj[k])}</option>`)
+        .join('')
+    el.innerHTML = `
+    <div class="slot-head">
+      <span class="slot-tag">${LETTERS[i]}</span>
+      <label class="field" style="flex:1 1 180px"><span>Name</span><input type="text" id="s${i}-name"></label>
+      <label class="field"><span>Start from</span><select id="s${i}-preset"><option value="">Choose a preset</option>${options(PRESETS, (p) => p.label, '')}</select></label>
+      <label class="field"><span>Formula</span><select id="s${i}-formula">${options(FORMULAS, (f) => f.name, slot.formula)}</select></label>
+      ${
+        isOklch
+          ? `<label class="field"><span>Chroma from</span><select id="s${i}-mode">
+        <option value="base"${slot.chromaMode === 'base' ? ' selected' : ''}>Base chroma</option>
+        <option value="share"${slot.chromaMode === 'share' ? ' selected' : ''}>Share of sRGB max</option></select></label>`
+          : ''
+      }
+      ${
+        slot.formula === 'oklch-amount'
+          ? `
+        <label class="field"><span>Lightest L</span><input class="narrow" type="number" id="s${i}-top" step="0.005" min="0" max="1" value="${slot.top}"></label>
+        <label class="field"><span>Darkest L</span><input class="narrow" type="number" id="s${i}-bottom" step="0.005" min="0" max="1" value="${slot.bottom}"></label>`
+          : ''
+      }
+      ${state.slots.length > 1 ? `<button id="s${i}-remove">Remove</button>` : ''}
+    </div>
+    <div class="formula" id="s${i}-text"></div>
+    ${isOklch ? `<div class="formula warn" id="s${i}-cap"></div>` : ''}
+    <div class="scroll"><div class="grid" id="s${i}-grid"></div></div>`
+    const name = el.querySelector(`#s${i}-name`)
+    name.value = slot.name
+    name.addEventListener('input', () => {
+      slot.name = name.value
+      changed()
+    })
+    el.querySelector(`#s${i}-preset`).addEventListener('change', (e) => {
+      if (!e.target.value) return
+      state.slots[i] = newSlot(e.target.value)
+      renderSlots()
+      changed()
+    })
+    el.querySelector(`#s${i}-formula`).addEventListener('change', (e) => {
+      slot.formula = e.target.value
+      renderSlots()
+      changed()
+    })
+    const mode = el.querySelector(`#s${i}-mode`)
+    if (mode)
+      mode.addEventListener('change', (e) => {
+        slot.chromaMode = e.target.value
+        el.querySelector(`#s${i}-text`).textContent = formulaText(slot)
+        changed()
+      })
+    for (const key of ['top', 'bottom']) {
+      const input = el.querySelector(`#s${i}-${key}`)
+      if (input)
+        input.addEventListener('input', () => {
+          const v = parseFloat(input.value)
+          if (!Number.isFinite(v)) return
+          slot[key] = Math.min(1, Math.max(0, v))
+          el.querySelector(`#s${i}-text`).textContent = formulaText(slot)
+          changed()
+        })
+    }
+    const remove = el.querySelector(`#s${i}-remove`)
+    if (remove)
+      remove.addEventListener('click', () => {
+        state.slots.splice(i, 1)
+        renderSlots()
+        changed()
+      })
+    el.querySelector(`#s${i}-text`).textContent = formulaText(slot)
+
+    const grid = el.querySelector(`#s${i}-grid`)
+    grid.innerHTML =
+      '<div class="lab">Step</div>' + STEPS.map((s) => `<div class="stepnum">${s}</div>`).join('')
+    for (const param of FORMULAS[slot.formula].params) {
+      const def = PARAM[param]
+      grid.insertAdjacentHTML('beforeend', `<div class="lab"><b>${def.label}</b>${def.hint}</div>`)
+      for (const step of STEPS) {
+        if (step === '50') {
+          grid.insertAdjacentHTML('beforeend', '<div class="fixed">base</div>')
+          continue
+        }
+        const input = document.createElement('input')
+        Object.assign(input, {
+          type: 'number',
+          id: `s${i}-${param}-${step}`,
+          step: def.step,
+          min: def.min,
+          max: def.max,
+          value: slot.steps[step][param]
+        })
+        input.setAttribute('aria-label', `${def.label} of step ${step}`)
+        input.addEventListener('input', () => {
+          const v = parseFloat(input.value)
+          if (!Number.isFinite(v)) return
+          slot.steps[step][param] = Math.min(def.max, Math.max(def.min, v))
+          changed()
+        })
+        grid.appendChild(input)
+      }
+    }
+    return el
+  }
+
+  /* Results */
+  const textOn = (hex) => {
+    const [r, g, b] = hexToRgb(hex).map(s2l)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.2 ? '#111111' : '#ffffff'
+  }
+  const GRAY_CHROMA = 0.002
+  function rowMetrics(scale, base) {
+    const b = hexToLch(base)
+    let drift = null,
+      order = []
+    let prev = null
+    for (const s of STEPS) {
+      const c = hexToLch(scale[s])
+      if (c.C >= GRAY_CHROMA) {
+        const d = Math.abs(((c.H - b.H + 540) % 360) - 180)
+        drift = Math.max(drift ?? 0, d)
+      }
+      if (prev !== null && c.L >= prev) order.push(s)
+      prev = c.L
+    }
+    return { drift, order }
+  }
+  function rowHtml(name, tone, scale, base) {
+    const m = rowMetrics(scale, base)
+    const drift = m.drift === null ? 'hue n/a' : `hue ±${Math.round(m.drift)}°`
+    const order = m.order.length
+      ? `<br><span class="warn">out of order at ${m.order.join(', ')}</span>`
+      : ''
+    const cells = STEPS.map((s) => {
+      const c = hexToLch(scale[s])
+      return `<div class="sw${s === '50' ? ' base' : ''}" title="${s}  ${scale[s]}  L ${c.L.toFixed(3)}  C ${c.C.toFixed(3)}  H ${c.H.toFixed(1)}" style="background:${scale[s]};color:${textOn(scale[s])}"><span>${scale[s].slice(1)}</span><span>${c.L.toFixed(2)} ${c.C.toFixed(2)}</span></div>`
+    }).join('')
+    return `<div class="lab"><b style="color:${tone}">${name}</b>${drift}${order}</div>${cells}`
+  }
+  function allRows(id, base) {
+    const rows = [{ name: 'Now', tone: 'var(--ref)', dash: '', scale: scaleFor(NOW, base) }]
+    if (HAND_SET[id])
+      rows.push({
+        name: 'Hand-set',
+        tone: 'var(--ink)',
+        dash: '1 3',
+        scale: Object.fromEntries(STEPS.map((s) => [s, HAND_SET[id][s].toLowerCase()]))
+      })
+    state.slots.forEach((slot, i) =>
+      rows.push({
+        name: LETTERS[i],
+        full: slot.name,
+        tone: `var(${TONES[i]})`,
+        dash: DASHES[i],
+        scale: scaleFor(slot, base),
+        slot
+      })
+    )
+    return rows
+  }
+  function roleHtml(id, label, base) {
+    const c = hexToLch(base)
+    const header =
+      '<div class="lab"></div>' + STEPS.map((s) => `<div class="stepnum">${s}</div>`).join('')
+    return `<div class="role"><div class="role-head"><h3>${label}</h3>
+    <span class="mono muted" style="font-size:12px">${base} L ${c.L.toFixed(2)} C ${c.C.toFixed(3)} H ${c.H.toFixed(0)}</span>
+    <button class="linkish" data-focus="${id}" aria-pressed="${state.focus === id}">Curves</button></div>
+    <div class="scroll"><div class="grid">${header}${allRows(id, base)
+      .map((r) => rowHtml(r.name, r.tone, r.scale, base))
+      .join('')}</div></div></div>`
+  }
+  function baseOf(id) {
+    if (id === 'custom') return state.custom
+    const [brand, role] = id.split('/')
+    return BRANDS[brand]?.[role] ?? null
+  }
+  function renderResults() {
+    let html = ''
+    if (state.custom)
+      html += `<div class="brand"><h2>Your color</h2>${roleHtml('custom', state.custom, state.custom)}</div>`
+    for (const brand of Object.keys(BRANDS)) {
+      if (!state.brands.has(brand)) continue
+      html +=
+        `<div class="brand"><h2>${brand}</h2>` +
+        ROLES.filter((r) => state.roles.has(r))
+          .map((r) => roleHtml(`${brand}/${r}`, r, BRANDS[brand][r]))
+          .join('') +
+        '</div>'
+    }
+    $('results').innerHTML = html || '<p class="muted">Choose a brand and a role to see scales.</p>'
+    $('results').classList.toggle('compact', !$('show-values').checked)
+  }
+
+  /* Curves */
+  function plot(title, rows, valueOf, yMin, yMax, ticks, format, extra) {
+    const W = 320,
+      H = 170,
+      L = 38,
+      R = 8,
+      T = 8,
+      B = 22
+    const x = (i) => L + (i * (W - L - R)) / (STEPS.length - 1)
+    const y = (v) => T + ((yMax - Math.min(yMax, Math.max(yMin, v))) * (H - T - B)) / (yMax - yMin)
+    const grid = ticks
+      .map(
+        (t) =>
+          `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)" stroke-width="1"/><text x="${L - 5}" y="${y(t) + 3}" text-anchor="end">${format(t)}</text>`
+      )
+      .join('')
+    const xl = STEPS.map(
+      (s, i) => `<text x="${x(i)}" y="${H - 7}" text-anchor="middle">${s}</text>`
+    ).join('')
+    const lines = rows
+      .map((r) => {
+        const pts = STEPS.map(
+          (s, i) => `${x(i).toFixed(1)},${y(valueOf(r.scale[s])).toFixed(1)}`
+        ).join(' ')
+        return `<polyline points="${pts}" fill="none" stroke="${r.tone}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"${r.dash ? ` stroke-dasharray="${r.dash}"` : ''}/>`
+      })
+      .join('')
+    return `<div class="plot"><h3>${title}</h3><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${title} across steps 05 to 95">${grid}${xl}${extra ? extra(x, y) : ''}${lines}</svg></div>`
+  }
+  function renderCurves() {
+    const base = baseOf(state.focus)
+    if (!base) {
+      state.focus = 'chassis/primary'
+      return renderCurves()
+    }
+    const rows = allRows(state.focus, base)
+    const b = hexToLch(base)
+    $('curve-title').textContent =
+      `Curves of ${state.focus === 'custom' ? base : state.focus.replace('/', ' ')}`
+    const oklchRows = rows.filter((r) => r.slot?.formula.startsWith('oklch'))
+    $('legend').innerHTML =
+      rows
+        .map(
+          (r) =>
+            `<span><svg width="26" height="6" aria-hidden="true"><line x1="0" x2="26" y1="3" y2="3" stroke="${r.tone}" stroke-width="2"${r.dash ? ` stroke-dasharray="${r.dash}"` : ''}/></svg>${r.name}${r.full ? `: ${escapeHtml(r.full)}` : ''}</span>`
+        )
+        .join('') +
+      (oklchRows.length
+        ? '<span><svg width="26" height="6" aria-hidden="true"><line x1="0" x2="26" y1="3" y2="3" stroke="var(--muted)" stroke-width="1" stroke-dasharray="1 2"/></svg>Thin dotted, on the chroma chart: sRGB limit of that formula</span>'
+        : '')
+    const maxC = Math.max(0.05, ...rows.flatMap((r) => STEPS.map((s) => hexToLch(r.scale[s]).C)))
+    const top = Math.ceil(maxC * 20) / 20
+    const chromaTicks = [0, top / 2, top]
+    const limitLines = (x, y) =>
+      oklchRows
+        .map((r) => {
+          let d = '',
+            pen = 'M'
+          STEPS.forEach((s, i) => {
+            const limit = oklchTarget(r.slot, base, s).limit
+            if (limit > top) {
+              pen = 'M'
+              return
+            }
+            d += `${pen}${x(i).toFixed(1)} ${y(limit).toFixed(1)} `
+            pen = 'L'
+          })
+          return `<path d="${d}" fill="none" stroke="${r.tone}" stroke-width="1" stroke-dasharray="1 2" opacity="0.75"/>`
+        })
+        .join('')
+    const hueDelta = (hex) => {
+      const c = hexToLch(hex)
+      return c.C < GRAY_CHROMA ? 0 : ((c.H - b.H + 540) % 360) - 180
+    }
+    const hueMax = Math.max(
+      ...rows.flatMap((r) => STEPS.map((s) => Math.abs(hueDelta(r.scale[s]))))
+    )
+    const hueRange = Math.min(180, Math.max(20, Math.ceil(hueMax / 10) * 10))
+    $('plots').innerHTML =
+      plot(
+        'Lightness (L)',
+        rows,
+        (h) => hexToLch(h).L,
+        0,
+        1,
+        [0, 0.25, 0.5, 0.75, 1],
+        (t) => t.toFixed(2)
+      ) +
+      plot(
+        'Chroma (C)',
+        rows,
+        (h) => hexToLch(h).C,
+        0,
+        top,
+        chromaTicks,
+        (t) => t.toFixed(3),
+        limitLines
+      ) +
+      plot(
+        'Hue away from base, in degrees',
+        rows,
+        hueDelta,
+        -hueRange,
+        hueRange,
+        [-hueRange, -hueRange / 2, 0, hueRange / 2, hueRange],
+        (t) => (t > 0 ? '+' : '') + t
+      )
+    markCapped(base)
+  }
+  function markCapped(base) {
+    const color = state.focus === 'custom' ? base : state.focus.replace('/', ' ')
+    state.slots.forEach((slot, i) => {
+      const note = $(`s${i}-cap`)
+      if (!note) return
+      let capped = 0
+      for (const step of EDITABLE) {
+        const input = $(`s${i}-chroma-${step}`)
+        const t = oklchTarget(slot, base, step)
+        const over = t.wanted > t.limit + 0.0005
+        if (over) capped++
+        input.classList.toggle('capped', over)
+        input.title = over
+          ? `Above the sRGB limit of ${color} at this step: ${t.limit.toFixed(3)}`
+          : ''
+      }
+      note.textContent = capped
+        ? `${capped} of 10 chroma values, marked here, are above the sRGB limit of ${color}. Raising them has no effect.`
+        : ''
+    })
+  }
+  function escapeHtml(t) {
+    const d = document.createElement('div')
+    d.textContent = t
+    return d.innerHTML
+  }
+
+  let queued = false
+  function draw() {
+    if (queued) return
+    queued = true
+    requestAnimationFrame(() => {
+      queued = false
+      renderResults()
+      renderCurves()
+    })
+  }
+  function changed() {
+    remember()
+    $('save-status').textContent = ''
+    draw()
+  }
+
+  /* Filters and actions */
+  function checkList(host, items, set) {
+    host.innerHTML = items
+      .map(
+        (k) =>
+          `<label><input type="checkbox" id="pick-${k}" data-key="${k}"${set.has(k) ? ' checked' : ''}> ${k}</label>`
+      )
+      .join('')
+    host.addEventListener('change', (e) => {
+      const k = e.target.dataset.key
+      if (!k) return
+      e.target.checked ? set.add(k) : set.delete(k)
+      draw()
+    })
+  }
+  checkList($('brand-filter'), Object.keys(BRANDS), state.brands)
+  checkList($('role-filter'), ROLES, state.roles)
+  $('show-values').addEventListener('change', draw)
+  $('results').addEventListener('click', (e) => {
+    const id = e.target.dataset?.focus
+    if (!id) return
+    state.focus = id
+    draw()
+    document.querySelector('.curves').scrollIntoView({ block: 'nearest' })
+  })
+  function setCustom(v) {
+    const t = v.trim()
+    const err = $('custom-error')
+    if (!t) {
+      state.custom = null
+      err.hidden = true
+      if (state.focus === 'custom') state.focus = 'chassis/primary'
+      draw()
+      return
+    }
+    const hex = (t.startsWith('#') ? t : '#' + t).toUpperCase()
+    if (!/^#[0-9A-F]{6}$/.test(hex)) {
+      err.textContent = 'Enter six hex digits, such as #0094B8.'
+      err.hidden = false
+      return
+    }
+    err.hidden = true
+    state.custom = hex
+    state.focus = 'custom'
+    $('custom-picker').value = hex.toLowerCase()
+    draw()
+  }
+  $('custom-hex').addEventListener('input', (e) => setCustom(e.target.value))
+  $('custom-picker').addEventListener('input', (e) => {
+    $('custom-hex').value = e.target.value.toUpperCase()
+    setCustom(e.target.value)
+  })
+  $('add-slot').addEventListener('click', () => {
+    if (state.slots.length >= 4) return
+    state.slots.push(newSlot('oklab'))
+    renderSlots()
+    changed()
+  })
+  const settingsText = () => JSON.stringify(state.slots, null, 2)
+  $('copy-all').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(settingsText())
+      $('save-status').textContent = 'Copied the settings of every formula.'
+    } catch (e) {
+      $('save-status').textContent = 'The browser refused the copy. Use Save for Claude instead.'
+    }
+  })
+
+  renderSlots()
+  renderResults()
+  renderCurves()
+
+  /* Saved settings Claude can read */
+  ;(async () => {
+    const db = await window.claude?.use?.('db')
+    if (!db) return
+    const doc = db.doc('lab/settings')
+    const button = $('save')
+    button.hidden = false
+    button.addEventListener('click', async () => {
+      button.disabled = true
+      $('save-status').textContent = 'Saving'
+      try {
+        await doc.set({ slots: JSON.parse(settingsText()) })
+        $('save-status').textContent = 'Saved. Tell Claude to read the lab.'
+      } catch (e) {
+        $('save-status').textContent =
+          'Could not save. Use Copy settings and paste them in the chat.'
+      }
+      button.disabled = false
+    })
+    try {
+      const snap = await doc.get()
+      if (snap.exists && validSlots(snap.data()?.slots)) {
+        let local = null
+        try {
+          local = localStorage.getItem(storageKey)
+        } catch (e) {}
+        if (!local) {
+          state.slots = JSON.parse(JSON.stringify(snap.data().slots))
+          renderSlots()
+          draw()
+        }
+      }
+    } catch (e) {}
+  })()
+</script>
