@@ -14,14 +14,16 @@ the screens and the apps.
 
 Once, with Node.js 22.12 or later: `pnpm install`.
 
-| Command                 | What it does                                        |
-| ----------------------- | --------------------------------------------------- |
-| `pnpm lint`          | Checks the token files in `source/`                 |
-| `pnpm build`         | Builds the tokens into `dist/`                      |
-| `pnpm verify`        | Fails when `dist/` differs from a fresh build       |
-| `pnpm diff`          | Reports the tokens added, removed and changed       |
-| `pnpm swift-package` | Writes `Package.swift` from `chassis.build`         |
-| `pnpm release-notes` | Prints the changelog entry of the version, or fails |
+| Command                    | What it does                                        |
+| -------------------------- | --------------------------------------------------- |
+| `pnpm build`               | Builds the tokens into `dist/`                      |
+| `pnpm lint`                | Checks the token files in `source/`                 |
+| `pnpm verify`              | Fails when `dist/` differs from a fresh build       |
+| `pnpm diff`                | Reports the tokens added, removed and changed       |
+| `pnpm swift-package`       | Writes `Package.swift` from `chassis.build`         |
+| `pnpm swift-package:check` | Fails when `Package.swift` differs from it          |
+| `pnpm archive`             | Writes one zip per platform, app and brand          |
+| `pnpm release-notes`       | Prints the changelog entry of the version, or fails |
 
 ## Rules
 

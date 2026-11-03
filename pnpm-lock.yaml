@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@chassis-ui/tokens':
-        specifier: ^0.15.0
-        version: 0.15.0
+        specifier: ^0.16.0
+        version: 0.16.0
 
 packages:
 
@@ -26,8 +26,8 @@ packages:
   '@bundled-es-modules/postcss-calc-ast-parser@0.1.6':
     resolution: {integrity: sha512-y65TM5zF+uaxo9OeekJ3rxwTINlQvrkbZLogYvQYVoLtxm4xEiHfZ7e/MyiWbStYyWZVZkVqsaVU6F4SUK5XUA==}
 
-  '@chassis-ui/tokens@0.15.0':
-    resolution: {integrity: sha512-Bu5CW0XLW76zVSat06KQh/aO0Wtf5VI1Zp4as3QnsvPSFg1va+8Txktie9gH99FibPWkPeZ9jxWSVovDPQBbsw==}
+  '@chassis-ui/tokens@0.16.0':
+    resolution: {integrity: sha512-+qXvbeAeB00gEwkT8zaf60gnLlNDZBPZ1GzAjt41GWK9xhqYxK/es4MJKSncuZEOZmRhkdkup5l1cv83kH01rA==}
     engines: {node: '>=22.12.0'}
     hasBin: true
 
@@ -656,7 +656,7 @@ snapshots:
     dependencies:
       postcss-calc-ast-parser: 0.1.4
 
-  '@chassis-ui/tokens@0.15.0':
+  '@chassis-ui/tokens@0.16.0':
     dependencies:
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.7.1)
       style-dictionary: 5.7.1
