@@ -2264,7 +2264,7 @@
             },
             "fg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.10}"
+              "$value": "{color.base.primitive.light.primary.10}"
             },
             "fg-subtle": {
               "$type": "color",
@@ -2292,15 +2292,15 @@
             },
             "bg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.80}"
+              "$value": "{color.base.primitive.light.primary.90}"
             },
             "bg-even": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.90}"
+              "$value": "{color.base.primitive.light.primary.80}"
             },
             "bg-evident": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.95}"
+              "$value": "{color.base.primitive.light.primary.70}"
             },
             "bg-active": {
               "$type": "color",
@@ -4004,7 +4004,7 @@
             },
             "fg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.white.base}"
+              "$value": "{color.base.primitive.dark.primary.10}"
             },
             "fg-subtle": {
               "$type": "color",
@@ -4032,15 +4032,15 @@
             },
             "bg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.black.base}"
+              "$value": "{color.base.primitive.dark.primary.95}"
             },
             "bg-even": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.neutral.95}"
+              "$value": "{color.base.primitive.dark.primary.90}"
             },
             "bg-evident": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.neutral.90}"
+              "$value": "{color.base.primitive.dark.primary.80}"
             },
             "bg-active": {
               "$type": "color",
