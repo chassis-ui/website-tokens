@@ -76,15 +76,16 @@ output of each platform and how a project uses it.
 A release is a push to `main` with a new version in `package.json`, without a tag of its own, as
 the workflow makes the tag:
 
-1. Set the version in `package.json`, and add its entry to `CHANGELOG.md`.
+1. On `next`, set the version in `package.json`, and add its entry to `CHANGELOG.md`.
 2. `pnpm build`, which writes the version into the headers of `dist/`. `pnpm verify` ignores
    those lines, so it does not notice a build that was skipped.
 3. `pnpm verify`.
-4. Commit all of it on a branch, and merge its pull request into `main`.
+4. Commit all of it on `next`. Merge `next` into `main` with a merge commit, locally or by a
+   pull request, push `main`, which releases it, and fast-forward `next` to `main`.
 
-A prerelease is the same on `next`: a version such as `0.4.0-next.0`, with its own entry in
-`CHANGELOG.md`, merged into `next`, which releases nothing else. `next` is merged into `main` for
-the release, with a merge commit.
+A prerelease is the same on `next` alone: a version such as `0.4.0-next.0`, with its own entry in
+`CHANGELOG.md`, is released by the push to `next`. `next` releases no version without a
+prerelease part.
 
 The release workflow runs when the version has no tag `v<version>`, and stops when `CHANGELOG.md` has no entry for it. It lints `source/`, checks
 `dist/` against a fresh build and `Package.swift` against `chassis.build`, builds the Android
