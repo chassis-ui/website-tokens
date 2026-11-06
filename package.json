@@ -1,6 +1,6 @@
 {
   "name": "@chassis-ui/website-tokens",
-  "version": "0.3.0",
+  "version": "0.4.0-next.0",
   "description": "The design tokens of the Chassis websites and apps: the chassis and sinefil brands, the docs and demo apps, built with @chassis-ui/tokens",
   "type": "module",
   "repository": {
