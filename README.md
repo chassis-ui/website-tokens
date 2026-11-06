@@ -80,7 +80,11 @@ the workflow makes the tag:
 2. `pnpm build`, which writes the version into the headers of `dist/`. `pnpm verify` ignores
    those lines, so it does not notice a build that was skipped.
 3. `pnpm verify`.
-4. Commit all of it, then `git push origin main`.
+4. Commit all of it on a branch, and merge its pull request into `main`.
+
+A prerelease is the same on `next`: a version such as `0.4.0-next.0`, with its own entry in
+`CHANGELOG.md`, merged into `next`, which releases nothing else. `next` is merged into `main` for
+the release, with a merge commit.
 
 The release workflow runs when the version has no tag `v<version>`, and stops when `CHANGELOG.md` has no entry for it. It lints `source/`, checks
 `dist/` against a fresh build and `Package.swift` against `chassis.build`, builds the Android

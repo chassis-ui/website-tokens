@@ -36,10 +36,23 @@ Once, with Node.js 22.12 or later: `pnpm install`.
 - **The names in `dist/` are public.** Apps read them by name, and a removed or renamed token
   stops them compiling. `pnpm diff` names such a change, and the changelog says so.
 
+## Branches
+
+- `main` holds the released versions, and takes a change by pull request only.
+- `next` is the prerelease channel. Work is merged into it first, and it is merged into `main`
+  with a merge commit, never a squash, so the two keep one history.
+- Any other branch is short-lived, `feat/…`, `fix/…` or `chore/…`, and is squash-merged.
+- A design draft branch, such as `figma-next`, is synced from another Figma file and is outside
+  this flow. Never merge it, and never take its `source/$themes.json`, which refers to that file:
+  only its brand files are carried over, by hand. Leave such a branch alone.
+
 ## Releases
 
-A push to `main` with a new version in `package.json` releases it and publishes it to npm, so:
+A push to `main` or `next` with a new version in `package.json` releases it and publishes it to
+npm, so:
 
+- On `next`, only a version with a prerelease part, such as `0.4.0-next.0`, is released, as a
+  prerelease; on `main`, any new version. Each version, a prerelease too, has its entry.
 - A new version and its entry in `CHANGELOG.md` go in one commit. The release stops without the
   entry.
 - Before that commit, run `pnpm build`, which writes the version into `dist/`, and
