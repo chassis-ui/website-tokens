@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly, this file was auto-generated.
-// Generated on Mon, 02 Nov 2026 15:06:44 GMT
+// Generated on Fri, 06 Nov 2026 17:53:18 GMT
 // Chassis - Tokens v0.3.0
 // Copyright 2026 Ozgur Gunes
 // Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
@@ -51,30 +51,30 @@ $cx-color-context-default-bg-idle: #ffffff !default;
 $cx-color-context-default-bg-hover: #f6f5f5 !default;
 $cx-color-context-default-bg-press: #eceae9 !default;
 $cx-color-context-default-bg-disabled: #d8d6d3 !default;
-$cx-color-context-alternate-base-color: #ffffff !default;
-$cx-color-context-alternate-contrast-color: #000000 !default;
+$cx-color-context-alternate-base-color: #250e21 !default;
+$cx-color-context-alternate-contrast-color: #ffffff !default;
 $cx-color-context-alternate-transparent-color: rgba(255, 255, 255, 0) !default;
-$cx-color-context-alternate-fg-main: #eceae9 !default;
-$cx-color-context-alternate-fg-subtle: rgba(236, 234, 233, 0.6) !default;
-$cx-color-context-alternate-fg-slight: rgba(236, 234, 233, 0.25) !default;
+$cx-color-context-alternate-fg-main: #ebe0e9 !default;
+$cx-color-context-alternate-fg-subtle: rgba(235, 224, 233, 0.6) !default;
+$cx-color-context-alternate-fg-slight: rgba(235, 224, 233, 0.25) !default;
 $cx-color-context-alternate-fg-active: #ffffff !default;
-$cx-color-context-alternate-fg-inverse: #191716 !default;
+$cx-color-context-alternate-fg-inverse: #180916 !default;
 $cx-color-context-alternate-fg-solid: #ffffff !default;
-$cx-color-context-alternate-fg-highlight: #d7c0d4 !default;
-$cx-color-context-alternate-bg-main: #262321 !default;
-$cx-color-context-alternate-bg-even: #191716 !default;
-$cx-color-context-alternate-bg-evident: #131210 !default;
+$cx-color-context-alternate-fg-highlight: #bd97b7 !default;
+$cx-color-context-alternate-bg-main: #180916 !default;
+$cx-color-context-alternate-bg-even: #250e21 !default;
+$cx-color-context-alternate-bg-evident: #3d1738 !default;
 $cx-color-context-alternate-bg-active: #7A2E6F !default;
-$cx-color-context-alternate-bg-inverse: #eceae9 !default;
-$cx-color-context-alternate-bg-solid: #131210 !default;
-$cx-color-context-alternate-bg-highlight: #250e21 !default;
-$cx-color-context-alternate-border-main: #5f5853 !default;
-$cx-color-context-alternate-border-subtle: rgba(236, 234, 233, 0.15) !default;
-$cx-color-context-alternate-icon-main: #7A2E6F !default;
-$cx-color-context-alternate-icon-subtle: rgba(236, 234, 233, 0.5) !default;
-$cx-color-context-alternate-icon-slight: rgba(122, 46, 111, 0.2) !default;
-$cx-color-context-alternate-cue-main: #7A2E6F !default;
-$cx-color-context-alternate-cue-slight: rgba(122, 46, 111, 0.2) !default;
+$cx-color-context-alternate-bg-inverse: #ebe0e9 !default;
+$cx-color-context-alternate-bg-solid: #250e21 !default;
+$cx-color-context-alternate-bg-highlight: #3d1738 !default;
+$cx-color-context-alternate-border-main: #7A2E6F !default;
+$cx-color-context-alternate-border-subtle: rgba(235, 224, 233, 0.15) !default;
+$cx-color-context-alternate-icon-main: #9b6293 !default;
+$cx-color-context-alternate-icon-subtle: rgba(235, 224, 233, 0.5) !default;
+$cx-color-context-alternate-icon-slight: rgba(155, 98, 147, 0.2) !default;
+$cx-color-context-alternate-cue-main: #9b6293 !default;
+$cx-color-context-alternate-cue-slight: rgba(155, 98, 147, 0.2) !default;
 $cx-color-context-alternate-link-main: #bd97b7 !default;
 $cx-color-context-alternate-link-hover: #d7c0d4 !default;
 $cx-color-context-alternate-link-active: #d9938f !default;
@@ -82,14 +82,14 @@ $cx-color-context-alternate-link-visited: #9b6293 !default;
 $cx-color-context-alternate-dim-main: rgba(255, 255, 255, 0.7) !default;
 $cx-color-context-alternate-dim-subtle: rgba(255, 255, 255, 0.3) !default;
 $cx-color-context-alternate-dim-slight: rgba(255, 255, 255, 0.05) !default;
-$cx-color-context-alternate-fg-idle: #eceae9 !default;
-$cx-color-context-alternate-fg-hover: rgba(236, 234, 233, 0.9) !default;
-$cx-color-context-alternate-fg-press: rgba(236, 234, 233, 0.9) !default;
-$cx-color-context-alternate-fg-disabled: rgba(236, 234, 233, 0.25) !default;
-$cx-color-context-alternate-bg-idle: #262321 !default;
-$cx-color-context-alternate-bg-hover: #191716 !default;
-$cx-color-context-alternate-bg-press: #131210 !default;
-$cx-color-context-alternate-bg-disabled: #262321 !default;
+$cx-color-context-alternate-fg-idle: #ebe0e9 !default;
+$cx-color-context-alternate-fg-hover: rgba(235, 224, 233, 0.9) !default;
+$cx-color-context-alternate-fg-press: rgba(235, 224, 233, 0.9) !default;
+$cx-color-context-alternate-fg-disabled: rgba(235, 224, 233, 0.25) !default;
+$cx-color-context-alternate-bg-idle: #180916 !default;
+$cx-color-context-alternate-bg-hover: #250e21 !default;
+$cx-color-context-alternate-bg-press: #3d1738 !default;
+$cx-color-context-alternate-bg-disabled: #3d1738 !default;
 $cx-color-context-primary-base-color: #7A2E6F !default;
 $cx-color-context-primary-contrast-color: #ffffff !default;
 $cx-color-context-primary-transparent-color: rgba(122, 46, 111, 0) !default;
@@ -1122,7 +1122,7 @@ $cx-shadow-elevation-info-90: 0rem 1rem 4rem -1rem rgba(0, 0, 0, 0.1), 0rem 0.5r
 $cx-shadow-elevation-info-95: 0rem 1.25rem 5rem -1.25rem rgba(0, 0, 0, 0.1), 0rem 0.625rem 2.5rem -0.625rem rgba(0, 0, 0, 0.1), 0rem 1.25rem 5rem -1.25rem rgba(46, 92, 158, 0.4) !default;
 $cx-shadow-elevation-info-05: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.1), 0rem 0.03125rem 0.125rem -0.03125rem rgba(0, 0, 0, 0.1), 0rem 0.0625rem 0.25rem -0.0625rem rgba(46, 92, 158, 0.4) !default;
 $cx-shadow-glow-default: 0rem 0rem 0.25rem 0rem #191716 !default;
-$cx-shadow-glow-alternate: 0rem 0rem 0.25rem 0rem #eceae9 !default;
+$cx-shadow-glow-alternate: 0rem 0rem 0.25rem 0rem #ebe0e9 !default;
 $cx-shadow-glow-black: 0rem 0rem 0.25rem 0rem #000000 !default;
 $cx-shadow-glow-white: 0rem 0rem 0.25rem 0rem #ffffff !default;
 $cx-shadow-glow-primary: 0rem 0rem 0.25rem 0rem #7A2E6F !default;

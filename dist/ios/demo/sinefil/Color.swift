@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly, this file was auto-generated.
-// Generated on Mon, 02 Nov 2026 15:06:45 GMT
+// Generated on Fri, 06 Nov 2026 17:53:20 GMT
 // Chassis - Tokens v0.3.0
 // Copyright 2026 Ozgur Gunes
 // Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
@@ -52,30 +52,30 @@ public enum ChassisTokensColor {
     public static let ColorContextDefaultBgHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) : UIColor(red: 0.965, green: 0.961, blue: 0.961, alpha: 1) }
     public static let ColorContextDefaultBgPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
     public static let ColorContextDefaultBgDisabled = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1) : UIColor(red: 0.847, green: 0.839, blue: 0.827, alpha: 1) }
-    public static let ColorContextAlternateBaseColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-    public static let ColorContextAlternateContrastColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
+    public static let ColorContextAlternateBaseColor = UIColor(red: 0.145, green: 0.055, blue: 0.129, alpha: 1)
+    public static let ColorContextAlternateContrastColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let ColorContextAlternateTransparentColor = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0) : UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0) }
-    public static let ColorContextAlternateFgMain = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
-    public static let ColorContextAlternateFgSubtle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.6) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.6) }
-    public static let ColorContextAlternateFgSlight = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.25) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.25) }
+    public static let ColorContextAlternateFgMain = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 1)
+    public static let ColorContextAlternateFgSubtle = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.6)
+    public static let ColorContextAlternateFgSlight = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.25)
     public static let ColorContextAlternateFgActive = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-    public static let ColorContextAlternateFgInverse = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1) : UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) }
+    public static let ColorContextAlternateFgInverse = UIColor(red: 0.094, green: 0.035, blue: 0.086, alpha: 1)
     public static let ColorContextAlternateFgSolid = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-    public static let ColorContextAlternateFgHighlight = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.741, green: 0.592, blue: 0.718, alpha: 1) : UIColor(red: 0.843, green: 0.753, blue: 0.831, alpha: 1) }
-    public static let ColorContextAlternateBgMain = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1) : UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1) }
-    public static let ColorContextAlternateBgEven = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) : UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) }
-    public static let ColorContextAlternateBgEvident = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) : UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) }
+    public static let ColorContextAlternateFgHighlight = UIColor(red: 0.741, green: 0.592, blue: 0.718, alpha: 1)
+    public static let ColorContextAlternateBgMain = UIColor(red: 0.094, green: 0.035, blue: 0.086, alpha: 1)
+    public static let ColorContextAlternateBgEven = UIColor(red: 0.145, green: 0.055, blue: 0.129, alpha: 1)
+    public static let ColorContextAlternateBgEvident = UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1)
     public static let ColorContextAlternateBgActive = UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1)
-    public static let ColorContextAlternateBgInverse = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
-    public static let ColorContextAlternateBgSolid = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1) : UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) }
-    public static let ColorContextAlternateBgHighlight = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1) : UIColor(red: 0.145, green: 0.055, blue: 0.129, alpha: 1) }
-    public static let ColorContextAlternateBorderMain = UIColor(red: 0.373, green: 0.345, blue: 0.325, alpha: 1)
-    public static let ColorContextAlternateBorderSubtle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.15) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.15) }
-    public static let ColorContextAlternateIconMain = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1) : UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1) }
-    public static let ColorContextAlternateIconSubtle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.5) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.5) }
-    public static let ColorContextAlternateIconSlight = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 0.2) : UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 0.2) }
-    public static let ColorContextAlternateCueMain = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1) : UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1) }
-    public static let ColorContextAlternateCueSlight = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 0.2) : UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 0.2) }
+    public static let ColorContextAlternateBgInverse = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 1)
+    public static let ColorContextAlternateBgSolid = UIColor(red: 0.145, green: 0.055, blue: 0.129, alpha: 1)
+    public static let ColorContextAlternateBgHighlight = UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1)
+    public static let ColorContextAlternateBorderMain = UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1)
+    public static let ColorContextAlternateBorderSubtle = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.15)
+    public static let ColorContextAlternateIconMain = UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1)
+    public static let ColorContextAlternateIconSubtle = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.5)
+    public static let ColorContextAlternateIconSlight = UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 0.2)
+    public static let ColorContextAlternateCueMain = UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1)
+    public static let ColorContextAlternateCueSlight = UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 0.2)
     public static let ColorContextAlternateLinkMain = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1) : UIColor(red: 0.741, green: 0.592, blue: 0.718, alpha: 1) }
     public static let ColorContextAlternateLinkHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.741, green: 0.592, blue: 0.718, alpha: 1) : UIColor(red: 0.843, green: 0.753, blue: 0.831, alpha: 1) }
     public static let ColorContextAlternateLinkActive = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.776, green: 0.361, blue: 0.337, alpha: 1) : UIColor(red: 0.851, green: 0.576, blue: 0.561, alpha: 1) }
@@ -83,14 +83,14 @@ public enum ChassisTokensColor {
     public static let ColorContextAlternateDimMain = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.7) : UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.7) }
     public static let ColorContextAlternateDimSubtle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.3) : UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.3) }
     public static let ColorContextAlternateDimSlight = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.05) : UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.05) }
-    public static let ColorContextAlternateFgIdle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
-    public static let ColorContextAlternateFgHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.9) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.9) }
-    public static let ColorContextAlternateFgPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.9) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.9) }
-    public static let ColorContextAlternateFgDisabled = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.25) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.25) }
-    public static let ColorContextAlternateBgIdle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1) : UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1) }
-    public static let ColorContextAlternateBgHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) : UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) }
-    public static let ColorContextAlternateBgPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) : UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) }
-    public static let ColorContextAlternateBgDisabled = UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1)
+    public static let ColorContextAlternateFgIdle = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 1)
+    public static let ColorContextAlternateFgHover = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.9)
+    public static let ColorContextAlternateFgPress = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.9)
+    public static let ColorContextAlternateFgDisabled = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.25)
+    public static let ColorContextAlternateBgIdle = UIColor(red: 0.094, green: 0.035, blue: 0.086, alpha: 1)
+    public static let ColorContextAlternateBgHover = UIColor(red: 0.145, green: 0.055, blue: 0.129, alpha: 1)
+    public static let ColorContextAlternateBgPress = UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1)
+    public static let ColorContextAlternateBgDisabled = UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1)
     public static let ColorContextPrimaryBaseColor = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1) : UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1) }
     public static let ColorContextPrimaryContrastColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let ColorContextPrimaryTransparentColor = UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 0)
@@ -675,18 +675,18 @@ public enum ChassisTokensColor {
     public static let ColorButtonDefaultBorderDisabled = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0)
     public static let ColorButtonDefaultBorderHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.373, green: 0.345, blue: 0.325, alpha: 1) : UIColor(red: 0.620, green: 0.596, blue: 0.573, alpha: 1) }
     public static let ColorButtonDefaultBorderPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) : UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) }
-    public static let ColorButtonAlternateFgIdle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
-    public static let ColorButtonAlternateFgDisabled = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.25) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.25) }
-    public static let ColorButtonAlternateFgHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.9) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.9) }
-    public static let ColorButtonAlternateFgPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.9) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 0.9) }
-    public static let ColorButtonAlternateBgIdle = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1) : UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1) }
-    public static let ColorButtonAlternateBgDisabled = UIColor(red: 0.149, green: 0.137, blue: 0.129, alpha: 1)
-    public static let ColorButtonAlternateBgHover = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) : UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) }
-    public static let ColorButtonAlternateBgPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) : UIColor(red: 0.075, green: 0.071, blue: 0.063, alpha: 1) }
-    public static let ColorButtonAlternateBorderIdle = UIColor(red: 0.373, green: 0.345, blue: 0.325, alpha: 1)
+    public static let ColorButtonAlternateFgIdle = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 1)
+    public static let ColorButtonAlternateFgDisabled = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.25)
+    public static let ColorButtonAlternateFgHover = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.9)
+    public static let ColorButtonAlternateFgPress = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 0.9)
+    public static let ColorButtonAlternateBgIdle = UIColor(red: 0.094, green: 0.035, blue: 0.086, alpha: 1)
+    public static let ColorButtonAlternateBgDisabled = UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1)
+    public static let ColorButtonAlternateBgHover = UIColor(red: 0.145, green: 0.055, blue: 0.129, alpha: 1)
+    public static let ColorButtonAlternateBgPress = UIColor(red: 0.239, green: 0.090, blue: 0.220, alpha: 1)
+    public static let ColorButtonAlternateBorderIdle = UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1)
     public static let ColorButtonAlternateBorderDisabled = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0) : UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0) }
-    public static let ColorButtonAlternateBorderHover = UIColor(red: 0.373, green: 0.345, blue: 0.325, alpha: 1)
-    public static let ColorButtonAlternateBorderPress = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
+    public static let ColorButtonAlternateBorderHover = UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1)
+    public static let ColorButtonAlternateBorderPress = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 1)
     public static let ColorButtonBlackFgIdle = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let ColorButtonBlackFgDisabled = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.25)
     public static let ColorButtonBlackFgHover = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.9)
@@ -1602,7 +1602,7 @@ public enum ChassisTokensColor {
     public static let ShadowElevationInfo052Color = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.4) : UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.1) }
     public static let ShadowElevationInfo053Color = UIColor(red: 0.180, green: 0.361, blue: 0.620, alpha: 0.4)
     public static let ShadowGlowDefaultColor = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) : UIColor(red: 0.098, green: 0.090, blue: 0.086, alpha: 1) }
-    public static let ShadowGlowAlternateColor = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1) : UIColor(red: 0.925, green: 0.918, blue: 0.914, alpha: 1) }
+    public static let ShadowGlowAlternateColor = UIColor(red: 0.922, green: 0.878, blue: 0.914, alpha: 1)
     public static let ShadowGlowBlackColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
     public static let ShadowGlowWhiteColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let ShadowGlowPrimaryColor = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0.608, green: 0.384, blue: 0.576, alpha: 1) : UIColor(red: 0.478, green: 0.180, blue: 0.435, alpha: 1) }

@@ -2252,11 +2252,11 @@
           "alternate": {
             "base-color": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.white.base}"
+              "$value": "{color.base.primitive.light.primary.80}"
             },
             "contrast-color": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.white.contrast}"
+              "$value": "{color.base.primitive.light.white.base}"
             },
             "transparent-color": {
               "$type": "color",
@@ -2264,7 +2264,7 @@
             },
             "fg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.10}"
+              "$value": "{color.base.primitive.light.primary.10}"
             },
             "fg-subtle": {
               "$type": "color",
@@ -2280,27 +2280,27 @@
             },
             "fg-inverse": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.90}"
+              "$value": "{color.base.primitive.light.primary.90}"
             },
             "fg-solid": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.white.base}"
+              "$value": "{color.base.context.light.alternate.contrast-color}"
             },
             "fg-highlight": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.primary.20}"
+              "$value": "{color.base.primitive.light.primary.30}"
             },
             "bg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.80}"
+              "$value": "{color.base.primitive.light.primary.90}"
             },
             "bg-even": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.90}"
+              "$value": "{color.base.primitive.light.primary.80}"
             },
             "bg-evident": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.95}"
+              "$value": "{color.base.primitive.light.primary.70}"
             },
             "bg-active": {
               "$type": "color",
@@ -2308,19 +2308,19 @@
             },
             "bg-inverse": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.10}"
+              "$value": "{color.base.primitive.light.primary.10}"
             },
             "bg-solid": {
               "$type": "color",
-              "$value": "{color.base.context.light.alternate.bg-evident}"
+              "$value": "{color.base.context.light.alternate.base-color}"
             },
             "bg-highlight": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.primary.80}"
+              "$value": "{color.base.primitive.light.primary.70}"
             },
             "border-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.60}"
+              "$value": "{color.base.primitive.light.primary.50}"
             },
             "border-subtle": {
               "$type": "color",
@@ -2328,7 +2328,7 @@
             },
             "icon-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.primary.50}"
+              "$value": "{color.base.primitive.light.primary.40}"
             },
             "icon-subtle": {
               "$type": "color",
@@ -2340,7 +2340,7 @@
             },
             "cue-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.primary.50}"
+              "$value": "{color.base.primitive.light.primary.40}"
             },
             "cue-slight": {
               "$type": "color",
@@ -2388,7 +2388,7 @@
             },
             "bg-disabled": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.neutral.80}"
+              "$value": "{color.base.context.light.alternate.bg-evident}"
             },
             "fg-idle": {
               "$type": "color",
@@ -3992,11 +3992,11 @@
           "alternate": {
             "base-color": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.white.base}"
+              "$value": "{color.base.primitive.dark.primary.80}"
             },
             "contrast-color": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.white.contrast}"
+              "$value": "{color.base.primitive.dark.white.base}"
             },
             "transparent-color": {
               "$type": "color",
@@ -4004,7 +4004,7 @@
             },
             "fg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.white.base}"
+              "$value": "{color.base.primitive.dark.primary.10}"
             },
             "fg-subtle": {
               "$type": "color",
@@ -4020,11 +4020,11 @@
             },
             "fg-inverse": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.black.base}"
+              "$value": "{color.base.primitive.dark.primary.90}"
             },
             "fg-solid": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.white.base}"
+              "$value": "{color.base.context.dark.alternate.contrast-color}"
             },
             "fg-highlight": {
               "$type": "color",
@@ -4032,15 +4032,15 @@
             },
             "bg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.black.base}"
+              "$value": "{color.base.primitive.dark.primary.90}"
             },
             "bg-even": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.neutral.95}"
+              "$value": "{color.base.primitive.dark.primary.80}"
             },
             "bg-evident": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.neutral.90}"
+              "$value": "{color.base.primitive.dark.primary.70}"
             },
             "bg-active": {
               "$type": "color",
@@ -4048,11 +4048,11 @@
             },
             "bg-inverse": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.white.base}"
+              "$value": "{color.base.primitive.dark.primary.10}"
             },
             "bg-solid": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.black.base}"
+              "$value": "{color.base.context.dark.alternate.base-color}"
             },
             "bg-highlight": {
               "$type": "color",
@@ -4060,7 +4060,7 @@
             },
             "border-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.neutral.60}"
+              "$value": "{color.base.primitive.dark.primary.50}"
             },
             "border-subtle": {
               "$type": "color",
@@ -4128,7 +4128,7 @@
             },
             "bg-disabled": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.neutral.80}"
+              "$value": "{color.base.context.dark.alternate.bg-evident}"
             },
             "fg-idle": {
               "$type": "color",
