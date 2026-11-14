@@ -8,6 +8,27 @@ without an entry is not released.
 The history of the token values before 0.1.0 is in the
 [changelog of Chassis Tokens](https://github.com/chassis-ui/tokens/blob/main/packages/tokens/CHANGELOG.md).
 
+## [0.4.0]
+
+The changes since 0.3.0, those of 0.4.0-next.0 with the one below.
+
+### Changed
+
+- The `alternate` color context, a dark band in both modes, is tinted with the primary color:
+  its backgrounds, text, borders, icons and cues come from the primary scale in place of the
+  neutral scale, white and black. Its `base-color` is primary 80, with white on it, and
+  `bg-disabled` follows `bg-evident`. In the light mode its `fg-main` is primary 05, and in both
+  modes its `border-main` is its `fg-main` at the `border-main` opacity of the contexts. Only
+  values change, no token name.
+- A push to `next` releases a version with a prerelease part to the npm dist-tag `next` and as a
+  GitHub prerelease. `main` releases any other new version, as before.
+- Built with `@chassis-ui/tokens` 0.16.0.
+
+### Added
+
+- `tools/`, two pages for making and checking color scales, in the repository and not in the
+  package.
+
 ## [0.4.0-next.0]
 
 ### Changed
