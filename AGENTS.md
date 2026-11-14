@@ -54,6 +54,8 @@ npm, so:
 
 - On `next`, only a version with a prerelease part, such as `0.4.0-next.0`, is released, as a
   prerelease; on `main`, any new version. Each version, a prerelease too, has its entry.
+- The commit that sets a stable version folds the entries of its prereleases into its own, and
+  removes them. The notes of a prerelease stay in its GitHub prerelease.
 - A stable version, such as `0.4.0`, is set on `next`, which does not release it. `next` is then
   merged into `main`, which releases it, and `next` is fast-forwarded to `main`.
 - A new version and its entry in `CHANGELOG.md` go in one commit. The release stops without the
