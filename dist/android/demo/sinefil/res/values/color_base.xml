@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly, this file was auto-generated.
-  Generated on Fri, 06 Nov 2026 17:54:04 GMT
+  Generated on Sat, 14 Nov 2026 18:33:49 GMT
   Chassis - Tokens v0.4.0-next.0
   Copyright 2026 Ozgur Gunes
   Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
@@ -241,9 +241,9 @@
   <color name="color_base_context_light_alternate_base_color">#ff250e21</color>
   <color name="color_base_context_light_alternate_contrast_color">#ffffffff</color>
   <color name="color_base_context_light_alternate_transparent_color">#00ffffff</color>
-  <color name="color_base_context_light_alternate_fg_main">#ffebe0e9</color>
-  <color name="color_base_context_light_alternate_fg_subtle">#99ebe0e9</color>
-  <color name="color_base_context_light_alternate_fg_slight">#40ebe0e9</color>
+  <color name="color_base_context_light_alternate_fg_main">#fff6f0f5</color>
+  <color name="color_base_context_light_alternate_fg_subtle">#99f6f0f5</color>
+  <color name="color_base_context_light_alternate_fg_slight">#40f6f0f5</color>
   <color name="color_base_context_light_alternate_fg_active">#ffffffff</color>
   <color name="color_base_context_light_alternate_fg_inverse">#ff180916</color>
   <color name="color_base_context_light_alternate_fg_solid">#ffffffff</color>
@@ -255,10 +255,10 @@
   <color name="color_base_context_light_alternate_bg_inverse">#ffebe0e9</color>
   <color name="color_base_context_light_alternate_bg_solid">#ff250e21</color>
   <color name="color_base_context_light_alternate_bg_highlight">#ff3d1738</color>
-  <color name="color_base_context_light_alternate_border_main">#ff7a2e6f</color>
-  <color name="color_base_context_light_alternate_border_subtle">#26ebe0e9</color>
+  <color name="color_base_context_light_alternate_border_main">#66f6f0f5</color>
+  <color name="color_base_context_light_alternate_border_subtle">#26f6f0f5</color>
   <color name="color_base_context_light_alternate_icon_main">#ff9b6293</color>
-  <color name="color_base_context_light_alternate_icon_subtle">#80ebe0e9</color>
+  <color name="color_base_context_light_alternate_icon_subtle">#80f6f0f5</color>
   <color name="color_base_context_light_alternate_icon_slight">#339b6293</color>
   <color name="color_base_context_light_alternate_cue_main">#ff9b6293</color>
   <color name="color_base_context_light_alternate_cue_slight">#339b6293</color>
@@ -273,10 +273,10 @@
   <color name="color_base_context_light_alternate_bg_hover">#ff250e21</color>
   <color name="color_base_context_light_alternate_bg_press">#ff3d1738</color>
   <color name="color_base_context_light_alternate_bg_disabled">#ff3d1738</color>
-  <color name="color_base_context_light_alternate_fg_idle">#ffebe0e9</color>
-  <color name="color_base_context_light_alternate_fg_hover">#e6ebe0e9</color>
-  <color name="color_base_context_light_alternate_fg_press">#e6ebe0e9</color>
-  <color name="color_base_context_light_alternate_fg_disabled">#40ebe0e9</color>
+  <color name="color_base_context_light_alternate_fg_idle">#fff6f0f5</color>
+  <color name="color_base_context_light_alternate_fg_hover">#e6f6f0f5</color>
+  <color name="color_base_context_light_alternate_fg_press">#e6f6f0f5</color>
+  <color name="color_base_context_light_alternate_fg_disabled">#40f6f0f5</color>
   <color name="color_base_context_light_black_base_color">#ff000000</color>
   <color name="color_base_context_light_black_contrast_color">#ffffffff</color>
   <color name="color_base_context_light_black_transparent_color">#00000000</color>
@@ -684,7 +684,7 @@
   <color name="color_base_context_dark_alternate_bg_inverse">#ffebe0e9</color>
   <color name="color_base_context_dark_alternate_bg_solid">#ff250e21</color>
   <color name="color_base_context_dark_alternate_bg_highlight">#ff3d1738</color>
-  <color name="color_base_context_dark_alternate_border_main">#ff7a2e6f</color>
+  <color name="color_base_context_dark_alternate_border_main">#66ebe0e9</color>
   <color name="color_base_context_dark_alternate_border_subtle">#26ebe0e9</color>
   <color name="color_base_context_dark_alternate_icon_main">#ff9b6293</color>
   <color name="color_base_context_dark_alternate_icon_subtle">#80ebe0e9</color>

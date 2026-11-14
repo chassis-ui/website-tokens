@@ -2,7 +2,7 @@
 
 <!--
   Do not edit directly, this file was auto-generated.
-  Generated on Fri, 06 Nov 2026 17:54:02 GMT
+  Generated on Sat, 14 Nov 2026 18:33:46 GMT
   Chassis - Tokens v0.4.0-next.0
   Copyright 2026 Ozgur Gunes
   Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
@@ -65,7 +65,7 @@
   <color name="color_context_alternate_bg_inverse">#ffd9eff4</color>
   <color name="color_context_alternate_bg_solid">#ff002c37</color>
   <color name="color_context_alternate_bg_highlight">#ff004a5c</color>
-  <color name="color_context_alternate_border_main">#ff0094b8</color>
+  <color name="color_context_alternate_border_main">#66d9eff4</color>
   <color name="color_context_alternate_border_subtle">#26d9eff4</color>
   <color name="color_context_alternate_icon_main">#ff40afca</color>
   <color name="color_context_alternate_icon_subtle">#80d9eff4</color>
@@ -679,9 +679,9 @@
   <color name="color_button_alternate_bg_disabled">#ff004a5c</color>
   <color name="color_button_alternate_bg_hover">#ff002c37</color>
   <color name="color_button_alternate_bg_press">#ff004a5c</color>
-  <color name="color_button_alternate_border_idle">#ff0094b8</color>
+  <color name="color_button_alternate_border_idle">#66d9eff4</color>
   <color name="color_button_alternate_border_disabled">#00000000</color>
-  <color name="color_button_alternate_border_hover">#ff0094b8</color>
+  <color name="color_button_alternate_border_hover">#66d9eff4</color>
   <color name="color_button_alternate_border_press">#ffd9eff4</color>
   <color name="color_button_black_fg_idle">#ffffffff</color>
   <color name="color_button_black_fg_disabled">#40ffffff</color>

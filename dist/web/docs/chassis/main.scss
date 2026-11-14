@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly, this file was auto-generated.
-// Generated on Fri, 06 Nov 2026 17:54:00 GMT
+// Generated on Sat, 14 Nov 2026 18:33:44 GMT
 // Chassis - Tokens v0.4.0-next.0
 // Copyright 2026 Ozgur Gunes
 // Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
@@ -703,9 +703,9 @@ $cx-color-base-context-light-default-fg-disabled: rgba(25, 27, 28, 0.25) !defaul
 $cx-color-base-context-light-alternate-base-color: #002c37 !default;
 $cx-color-base-context-light-alternate-contrast-color: #ffffff !default;
 $cx-color-base-context-light-alternate-transparent-color: rgba(255, 255, 255, 0) !default;
-$cx-color-base-context-light-alternate-fg-main: #d9eff4 !default;
-$cx-color-base-context-light-alternate-fg-subtle: rgba(217, 239, 244, 0.6) !default;
-$cx-color-base-context-light-alternate-fg-slight: rgba(217, 239, 244, 0.25) !default;
+$cx-color-base-context-light-alternate-fg-main: #edf8fa !default;
+$cx-color-base-context-light-alternate-fg-subtle: rgba(237, 248, 250, 0.6) !default;
+$cx-color-base-context-light-alternate-fg-slight: rgba(237, 248, 250, 0.25) !default;
 $cx-color-base-context-light-alternate-fg-active: #ffffff !default;
 $cx-color-base-context-light-alternate-fg-inverse: #001e25 !default;
 $cx-color-base-context-light-alternate-fg-solid: #ffffff !default;
@@ -717,10 +717,10 @@ $cx-color-base-context-light-alternate-bg-active: #0094B8 !default;
 $cx-color-base-context-light-alternate-bg-inverse: #d9eff4 !default;
 $cx-color-base-context-light-alternate-bg-solid: #002c37 !default;
 $cx-color-base-context-light-alternate-bg-highlight: #004a5c !default;
-$cx-color-base-context-light-alternate-border-main: #0094B8 !default;
-$cx-color-base-context-light-alternate-border-subtle: rgba(217, 239, 244, 0.15) !default;
+$cx-color-base-context-light-alternate-border-main: rgba(237, 248, 250, 0.4) !default;
+$cx-color-base-context-light-alternate-border-subtle: rgba(237, 248, 250, 0.15) !default;
 $cx-color-base-context-light-alternate-icon-main: #40afca !default;
-$cx-color-base-context-light-alternate-icon-subtle: rgba(217, 239, 244, 0.5) !default;
+$cx-color-base-context-light-alternate-icon-subtle: rgba(237, 248, 250, 0.5) !default;
 $cx-color-base-context-light-alternate-icon-slight: rgba(64, 175, 202, 0.2) !default;
 $cx-color-base-context-light-alternate-cue-main: #40afca !default;
 $cx-color-base-context-light-alternate-cue-slight: rgba(64, 175, 202, 0.2) !default;
@@ -735,10 +735,10 @@ $cx-color-base-context-light-alternate-bg-idle: #001e25 !default;
 $cx-color-base-context-light-alternate-bg-hover: #002c37 !default;
 $cx-color-base-context-light-alternate-bg-press: #004a5c !default;
 $cx-color-base-context-light-alternate-bg-disabled: #004a5c !default;
-$cx-color-base-context-light-alternate-fg-idle: #d9eff4 !default;
-$cx-color-base-context-light-alternate-fg-hover: rgba(217, 239, 244, 0.9) !default;
-$cx-color-base-context-light-alternate-fg-press: rgba(217, 239, 244, 0.9) !default;
-$cx-color-base-context-light-alternate-fg-disabled: rgba(217, 239, 244, 0.25) !default;
+$cx-color-base-context-light-alternate-fg-idle: #edf8fa !default;
+$cx-color-base-context-light-alternate-fg-hover: rgba(237, 248, 250, 0.9) !default;
+$cx-color-base-context-light-alternate-fg-press: rgba(237, 248, 250, 0.9) !default;
+$cx-color-base-context-light-alternate-fg-disabled: rgba(237, 248, 250, 0.25) !default;
 $cx-color-base-context-light-black-base-color: #000000 !default;
 $cx-color-base-context-light-black-contrast-color: #ffffff !default;
 $cx-color-base-context-light-black-transparent-color: rgba(0, 0, 0, 0) !default;
@@ -1146,7 +1146,7 @@ $cx-color-base-context-dark-alternate-bg-active: #0094B8 !default;
 $cx-color-base-context-dark-alternate-bg-inverse: #d9eff4 !default;
 $cx-color-base-context-dark-alternate-bg-solid: #002c37 !default;
 $cx-color-base-context-dark-alternate-bg-highlight: #004a5c !default;
-$cx-color-base-context-dark-alternate-border-main: #0094B8 !default;
+$cx-color-base-context-dark-alternate-border-main: rgba(217, 239, 244, 0.4) !default;
 $cx-color-base-context-dark-alternate-border-subtle: rgba(217, 239, 244, 0.15) !default;
 $cx-color-base-context-dark-alternate-icon-main: #40afca !default;
 $cx-color-base-context-dark-alternate-icon-subtle: rgba(217, 239, 244, 0.5) !default;
@@ -2514,7 +2514,7 @@ $cx-shadow-elevation-info-90: 0rem 1rem 4rem -1rem rgba(0, 0, 0, 0.1), 0rem 0.5r
 $cx-shadow-elevation-info-95: 0rem 1.25rem 5rem -1.25rem rgba(0, 0, 0, 0.1), 0rem 0.625rem 2.5rem -0.625rem rgba(0, 0, 0, 0.1), 0rem 1.25rem 5rem -1.25rem rgba(58, 114, 228, 0.4) !default;
 $cx-shadow-elevation-info-05: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.1), 0rem 0.03125rem 0.125rem -0.03125rem rgba(0, 0, 0, 0.1), 0rem 0.0625rem 0.25rem -0.0625rem rgba(58, 114, 228, 0.4) !default;
 $cx-shadow-glow-default: 0rem 0rem 0.25rem 0rem #191b1c !default;
-$cx-shadow-glow-alternate: 0rem 0rem 0.25rem 0rem #d9eff4 !default;
+$cx-shadow-glow-alternate: 0rem 0rem 0.25rem 0rem #edf8fa !default;
 $cx-shadow-glow-black: 0rem 0rem 0.25rem 0rem #000000 !default;
 $cx-shadow-glow-white: 0rem 0rem 0.25rem 0rem #ffffff !default;
 $cx-shadow-glow-primary: 0rem 0rem 0.25rem 0rem #0094B8 !default;

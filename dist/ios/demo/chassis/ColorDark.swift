@@ -4,7 +4,7 @@
 //
 
 // Do not edit directly, this file was auto-generated.
-// Generated on Fri, 06 Nov 2026 17:54:02 GMT
+// Generated on Sat, 14 Nov 2026 18:33:46 GMT
 // Chassis - Tokens v0.4.0-next.0
 // Copyright 2026 Ozgur Gunes
 // Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
@@ -69,7 +69,7 @@ public enum ChassisTokensColorDark {
     public static let ColorContextAlternateBgInverse = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 1)
     public static let ColorContextAlternateBgSolid = UIColor(red: 0.000, green: 0.173, blue: 0.216, alpha: 1)
     public static let ColorContextAlternateBgHighlight = UIColor(red: 0.000, green: 0.290, blue: 0.361, alpha: 1)
-    public static let ColorContextAlternateBorderMain = UIColor(red: 0.000, green: 0.580, blue: 0.722, alpha: 1)
+    public static let ColorContextAlternateBorderMain = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 0.4)
     public static let ColorContextAlternateBorderSubtle = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 0.15)
     public static let ColorContextAlternateIconMain = UIColor(red: 0.251, green: 0.686, blue: 0.792, alpha: 1)
     public static let ColorContextAlternateIconSubtle = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 0.5)
@@ -683,9 +683,9 @@ public enum ChassisTokensColorDark {
     public static let ColorButtonAlternateBgDisabled = UIColor(red: 0.000, green: 0.290, blue: 0.361, alpha: 1)
     public static let ColorButtonAlternateBgHover = UIColor(red: 0.000, green: 0.173, blue: 0.216, alpha: 1)
     public static let ColorButtonAlternateBgPress = UIColor(red: 0.000, green: 0.290, blue: 0.361, alpha: 1)
-    public static let ColorButtonAlternateBorderIdle = UIColor(red: 0.000, green: 0.580, blue: 0.722, alpha: 1)
+    public static let ColorButtonAlternateBorderIdle = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 0.4)
     public static let ColorButtonAlternateBorderDisabled = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0)
-    public static let ColorButtonAlternateBorderHover = UIColor(red: 0.000, green: 0.580, blue: 0.722, alpha: 1)
+    public static let ColorButtonAlternateBorderHover = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 0.4)
     public static let ColorButtonAlternateBorderPress = UIColor(red: 0.851, green: 0.937, blue: 0.957, alpha: 1)
     public static let ColorButtonBlackFgIdle = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
     public static let ColorButtonBlackFgDisabled = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.25)

@@ -2264,7 +2264,7 @@
             },
             "fg-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.primary.10}"
+              "$value": "{color.base.primitive.light.primary.05}"
             },
             "fg-subtle": {
               "$type": "color",
@@ -2320,7 +2320,7 @@
             },
             "border-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.light.primary.50}"
+              "$value": "rgba({color.base.context.light.alternate.fg-main}, {opacity.context.border-main})"
             },
             "border-subtle": {
               "$type": "color",
@@ -4060,7 +4060,7 @@
             },
             "border-main": {
               "$type": "color",
-              "$value": "{color.base.primitive.dark.primary.50}"
+              "$value": "rgba({color.base.context.dark.alternate.fg-main}, {opacity.context.border-main})"
             },
             "border-subtle": {
               "$type": "color",
