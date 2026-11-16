@@ -9,6 +9,21 @@ entry takes in the changes of its prereleases in their place.
 The history of the token values before 0.1.0 is in the
 [changelog of Chassis Tokens](https://github.com/chassis-ui/tokens/blob/main/packages/tokens/CHANGELOG.md).
 
+## [0.5.0]
+
+### Added
+
+- A size and line-height scale for the `display` family, `typography.fontSize.display` and
+  `typography.lineHeight.display` from `6xlarge` to `2xsmall`, each referencing the step of `ui`
+  as the steps of `prose` do, the letter spacing `typography.letterSpacing.display` and the
+  composites `font.display.<size>.<weight>`.
+- A `6xlarge` step for the `ui`, `prose` and `display` scales, 52 with a line height of 64, and
+  its composites.
+- The steps `xlarge` (22 and 32) and `xsmall` (12 and 18) for the `code` scale, and their
+  composites.
+
+Only additions: no token is removed or changed.
+
 ## [0.4.0]
 
 ### Changed
