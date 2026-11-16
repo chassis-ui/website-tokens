@@ -85,7 +85,8 @@ the workflow makes the tag:
 
 A prerelease is the same on `next` alone: a version such as `0.4.0-next.0`, with its own entry in
 `CHANGELOG.md`, is released by the push to `next`. `next` releases no version without a
-prerelease part.
+prerelease part. The entry of the stable version takes in those of its prereleases, which are
+removed from `CHANGELOG.md` in the same commit.
 
 The release workflow runs when the version has no tag `v<version>`, and stops when `CHANGELOG.md` has no entry for it. It lints `source/`, checks
 `dist/` against a fresh build and `Package.swift` against `chassis.build`, builds the Android

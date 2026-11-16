@@ -4,8 +4,8 @@
 //
 
 // Do not edit directly, this file was auto-generated.
-// Generated on Sat, 14 Nov 2026 18:34:18 GMT
-// Chassis - Tokens v0.4.0
+// Generated on Mon, 16 Nov 2026 15:56:17 GMT
+// Chassis - Tokens v0.5.0
 // Copyright 2026 Ozgur Gunes
 // Licensed under MIT (https://github.com/chassis-ui/website-tokens/blob/main/LICENSE)
 
@@ -471,6 +471,7 @@ $cx-opacity-context-dim-main: 0.7 !default;
 $cx-opacity-context-dim-subtle: 0.3 !default;
 $cx-opacity-context-dim-slight: 0.1 !default;
 $cx-opacity-context-transparent-color: 0 !default;
+$cx-typography-font-size-ui-6xlarge: 3.25rem !default;
 $cx-typography-font-size-ui-5xlarge: 2.75rem !default;
 $cx-typography-font-size-ui-4xlarge: 2.375rem !default;
 $cx-typography-font-size-ui-3xlarge: 2rem !default;
@@ -481,6 +482,7 @@ $cx-typography-font-size-ui-medium: 1rem !default;
 $cx-typography-font-size-ui-small: 0.875rem !default;
 $cx-typography-font-size-ui-xsmall: 0.75rem !default;
 $cx-typography-font-size-ui-2xsmall: 0.625rem !default;
+$cx-typography-font-size-prose-6xlarge: 3.25rem !default;
 $cx-typography-font-size-prose-5xlarge: 2.75rem !default;
 $cx-typography-font-size-prose-4xlarge: 2.375rem !default;
 $cx-typography-font-size-prose-3xlarge: 2rem !default;
@@ -491,6 +493,17 @@ $cx-typography-font-size-prose-medium: 1rem !default;
 $cx-typography-font-size-prose-small: 0.875rem !default;
 $cx-typography-font-size-prose-xsmall: 0.75rem !default;
 $cx-typography-font-size-prose-2xsmall: 0.625rem !default;
+$cx-typography-font-size-display-6xlarge: 3.25rem !default;
+$cx-typography-font-size-display-5xlarge: 2.75rem !default;
+$cx-typography-font-size-display-4xlarge: 2.375rem !default;
+$cx-typography-font-size-display-3xlarge: 2rem !default;
+$cx-typography-font-size-display-2xlarge: 1.625rem !default;
+$cx-typography-font-size-display-xlarge: 1.375rem !default;
+$cx-typography-font-size-display-large: 1.1875rem !default;
+$cx-typography-font-size-display-medium: 1rem !default;
+$cx-typography-font-size-display-small: 0.875rem !default;
+$cx-typography-font-size-display-xsmall: 0.75rem !default;
+$cx-typography-font-size-display-2xsmall: 0.625rem !default;
 $cx-typography-font-size-context-jumbo: 6rem !default;
 $cx-typography-font-size-context-hero: 4rem !default;
 $cx-typography-font-size-context-h1: 2.375rem !default;
@@ -511,9 +524,11 @@ $cx-typography-font-size-context-title-small: 1rem !default;
 $cx-typography-font-size-context-label-large: 1rem !default;
 $cx-typography-font-size-context-label-medium: 0.875rem !default;
 $cx-typography-font-size-context-label-small: 0.75rem !default;
+$cx-typography-font-size-code-xlarge: 1.375rem !default;
 $cx-typography-font-size-code-large: 1.1875rem !default;
 $cx-typography-font-size-code-medium: 1rem !default;
 $cx-typography-font-size-code-small: 0.875rem !default;
+$cx-typography-font-size-code-xsmall: 0.75rem !default;
 $cx-typography-font-size-website-hero-title: 4rem !default;
 $cx-typography-font-size-website-hero-body: 1.375rem !default;
 $cx-typography-font-size-website-section-title: 3rem !default;
@@ -521,6 +536,7 @@ $cx-typography-font-size-website-section-body: 1.375rem !default;
 $cx-typography-font-size-website-feature-title: 1.375rem !default;
 $cx-typography-font-size-website-feature-body: 1.1875rem !default;
 $cx-typography-font-size-website-module-title: 1.1875rem !default;
+$cx-typography-line-height-ui-6xlarge: 1.231em !default;
 $cx-typography-line-height-ui-5xlarge: 1.273em !default;
 $cx-typography-line-height-ui-4xlarge: 1.263em !default;
 $cx-typography-line-height-ui-3xlarge: 1.25em !default;
@@ -531,6 +547,7 @@ $cx-typography-line-height-ui-medium: 1.5em !default;
 $cx-typography-line-height-ui-small: 1.429em !default;
 $cx-typography-line-height-ui-xsmall: 1.5em !default;
 $cx-typography-line-height-ui-2xsmall: 1.4em !default;
+$cx-typography-line-height-prose-6xlarge: 1.231em !default;
 $cx-typography-line-height-prose-5xlarge: 1.273em !default;
 $cx-typography-line-height-prose-4xlarge: 1.263em !default;
 $cx-typography-line-height-prose-3xlarge: 1.25em !default;
@@ -541,6 +558,17 @@ $cx-typography-line-height-prose-medium: 1.5em !default;
 $cx-typography-line-height-prose-small: 1.429em !default;
 $cx-typography-line-height-prose-xsmall: 1.5em !default;
 $cx-typography-line-height-prose-2xsmall: 1.4em !default;
+$cx-typography-line-height-display-6xlarge: 1.231em !default;
+$cx-typography-line-height-display-5xlarge: 1.273em !default;
+$cx-typography-line-height-display-4xlarge: 1.263em !default;
+$cx-typography-line-height-display-3xlarge: 1.25em !default;
+$cx-typography-line-height-display-2xlarge: 1.385em !default;
+$cx-typography-line-height-display-xlarge: 1.455em !default;
+$cx-typography-line-height-display-large: 1.474em !default;
+$cx-typography-line-height-display-medium: 1.5em !default;
+$cx-typography-line-height-display-small: 1.429em !default;
+$cx-typography-line-height-display-xsmall: 1.5em !default;
+$cx-typography-line-height-display-2xsmall: 1.4em !default;
 $cx-typography-line-height-context-jumbo: 1.25em !default;
 $cx-typography-line-height-context-hero: 1.25em !default;
 $cx-typography-line-height-context-h1: 1.211em !default;
@@ -561,9 +589,11 @@ $cx-typography-line-height-context-title-small: 1.5em !default;
 $cx-typography-line-height-context-label-large: 1.5em !default;
 $cx-typography-line-height-context-label-medium: 1.429em !default;
 $cx-typography-line-height-context-label-small: 1.5em !default;
+$cx-typography-line-height-code-xlarge: 1.455em !default;
 $cx-typography-line-height-code-large: 1.474em !default;
 $cx-typography-line-height-code-medium: 1.5em !default;
 $cx-typography-line-height-code-small: 1.429em !default;
+$cx-typography-line-height-code-xsmall: 1.5em !default;
 $cx-typography-letter-spacing-base-zero: 0rem !default;
 $cx-typography-letter-spacing-ui-normal: 0rem !default;
 $cx-typography-letter-spacing-ui-strong: 0rem !default;
@@ -573,6 +603,10 @@ $cx-typography-letter-spacing-prose-normal: 0rem !default;
 $cx-typography-letter-spacing-prose-strong: 0rem !default;
 $cx-typography-letter-spacing-prose-mass: 0rem !default;
 $cx-typography-letter-spacing-prose-elegant: 0rem !default;
+$cx-typography-letter-spacing-display-normal: 0rem !default;
+$cx-typography-letter-spacing-display-strong: 0rem !default;
+$cx-typography-letter-spacing-display-mass: 0rem !default;
+$cx-typography-letter-spacing-display-elegant: 0rem !default;
 $cx-typography-letter-spacing-context-jumbo: -0.15625rem !default;
 $cx-typography-letter-spacing-context-hero: -0.09375rem !default;
 $cx-typography-letter-spacing-context-h1: 0rem !default;
